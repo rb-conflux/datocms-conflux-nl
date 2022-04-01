@@ -39,7 +39,7 @@ module.exports = (dato, root, i18n) => {
     });
   });
 
-  console.log(dato.site)
+  // console.log(dato.site)
 
 
 
@@ -62,11 +62,46 @@ module.exports = (dato, root, i18n) => {
   });
 */
 
-  root.createPost('content/index.md', 'yaml', {
+  //console.log(dato.home)
+
+  root.createPost('content/home/index.md', 'yaml', {
     frontmatter: {
-      title: 'test'
+      title: dato.home.toMap()
     }
   });
+
+  var pages = {
+    'index.md': 'home',
+    'about.md': 'pageAbout',
+    'topics.md': 'pageTopic',
+    'company.md': 'pageCompany',
+    'contact.md': 'pageContact'
+
+  };
+
+  for (var page in pages) {
+    if (pages[page]) {
+      root.createPost('content/' + page, 'yaml', {
+        frontmatter: {
+          title: dato[pages[page]].toMap()
+        }
+      });
+    } else {
+      console.error('No content found for: ' + page);
+    }
+  }
+
+
+
+
+
+
+
+  // root.createPost('content/home/service.' + '.md', 'yaml', {
+
+  // })
+
+
 
   /*
     // Create a markdown file with content coming from the `about_page` item
@@ -107,4 +142,5 @@ module.exports = (dato, root, i18n) => {
     });
   */
 };
+
 
