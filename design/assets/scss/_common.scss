@@ -1,0 +1,293 @@
+/*===========================================================
+ Custom Font CSS
+============================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+/*===========================================================
+ Custom Variable
+============================================================*/
+:root {
+    /* Hamber menu icon style */
+    --hamWidth: 40px;
+    --hamHeight: 4px;
+    --hamMargin: 6px;
+    /* summation of --hamMargin adn --hamHeight */
+    --hamTranslate: 10px;
+    /* summation of --hamMargin adn --hamHeight */
+    --hamTranslate3: -10px;
+    --hamBg: #1b2431;
+    --preloaderBg: #1b2431;
+
+}
+
+/*===========================================================
+ Common CSS
+============================================================*/
+
+body {
+    font-size: $small;
+    font-family: $fontPrimary, sans-serif;
+    font-weight: 400;
+    color: $black; 
+    background: $white;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    /* overflow-y: hidden; */
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+li,
+li:hover,
+a:hover,
+.btn,
+.btn:hover {
+    transition: all .3s ease;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+*:active,
+*:focus {
+    outline: none;
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+strong {
+    font-weight: 700;
+}
+
+u {
+    border-bottom: 1px solid $white;
+    line-height: 1;
+    text-decoration: unset;
+}
+
+.cboth {
+    overflow: hidden;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+button:active,
+button:focus {
+    outline: 0;
+    outline: 0;
+}
+
+#npreOverlay {
+    background: var(--preloaderBg);
+}
+
+/* Line Clmp */
+
+.line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+.line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+
+.line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+}
+
+
+/*===========================================================
+ Placeholder Style
+============================================================*/
+
+::-webkit-input-placeholder {
+    font-size: $small;
+    line-height: 1.5;
+    color: $color_pampas_approx;
+    line-height: 60px;
+    letter-spacing: normal;
+}
+
+:-moz-placeholder {
+    font-size: $small;
+    line-height: 1.5;
+    color: $color_pampas_approx;
+    line-height: 60px;
+    letter-spacing: normal;
+}
+
+::-moz-placeholder {
+    font-size: $small;
+    line-height: 1.5;
+    color: $color_pampas_approx;
+    line-height: 60px;
+    letter-spacing: normal;
+}
+
+:-ms-input-placeholder {
+    font-size: $small;
+    line-height: 1.5;
+    color: $color_pampas_approx;
+    line-height: 60px;
+    letter-spacing: normal;
+}
+
+textarea {
+    padding: 5px 10px;
+}
+
+/*===========================================================
+ Scroll To Top
+============================================================*/
+
+.go-top {
+    bottom: 15px;
+    display: none;
+    position: fixed;
+    right: 15px;
+    z-index: 999;
+}
+
+.go-top img {
+    width: 35px;
+}
+
+.go-top span {
+    /*background-color: #4285F4;*/
+    color: $white_60;
+    cursor: pointer;
+    float: right;
+    font-size: $small;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 5px 10px;
+}
+
+.go-top span:hover {
+    color: $white;
+}
+
+/*===========================================================
+ Common
+===========================================================*/
+.title h2 {
+    position: relative;
+    font-size: $large;
+    font-weight: bold;
+    line-height: 1.2;
+    color: $white;
+}
+
+.title h2:before {
+    position: absolute;
+    content: '';
+    width: 60px;
+    height: 5px;
+    background-image: linear-gradient(266deg, #2ab2df 114%, #00beb0 -12%);
+    left: 0;
+    top: -20px;
+}
+
+.title h3 {
+    position: relative;
+    font-size: $medium;
+    font-weight: 600;
+    line-height: 2;
+    color: $black; 
+}
+
+.title h3:before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 5px;
+    background-image: linear-gradient(266deg, #2ab2df 114%, #00beb0 -12%);
+    left: 0;
+    top: -10px;
+}
+
+.pdb-250 {
+    padding-bottom: 300px !important;
+}
+
+
+.bg-content.bg-whiter{
+    background-color: $color_pampas_approx;
+}
+.hero-area{
+    .inner-container {
+        background-image: url(../img/banner-bg.png);
+        background-position: 140px 0;
+        background-repeat: no-repeat;
+    }
+    
+}
+.spacer-x{
+    padding-left: 110px;
+    padding-right: 110px;
+}
+.spacer-x-small{
+    padding-left: 55px;
+    padding-right: 55px;
+}
