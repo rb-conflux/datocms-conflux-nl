@@ -1,0 +1,135 @@
+/*===========================================================
+ Bedrijven
+===========================================================*/
+.bedrijven-inner {
+    border-radius: 8px;
+    box-shadow: 5px 3px 15px 0 rgba(0, 0, 0, 0.05);
+    // background-color: $color_pampas_approx;
+    background-color: none;
+    // background-position: top right;
+    background-size: auto 600px;
+    background-repeat: no-repeat;
+    padding-left: 110px;
+    padding-right: 60px;
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+
+    &.home-banner {
+        .banner-right-img {
+            right: 51px;
+        }
+    }
+
+    &::before {}
+}
+
+.banner {
+    &-right-img {
+        position: absolute;
+        right: 53px;
+        bottom: -48px;
+        z-index: 10;
+        width: 550px;
+    }
+
+    &-img {
+        width: 540px;
+    }
+
+    &-text {
+        position: relative;
+        z-index: 99;
+        max-width: 470px;
+
+        h2 {
+            max-width: 550px;
+            font-size: $larger;
+            font-weight: bold;
+            line-height: 1.2;
+            color: $color_big_stone_approx;
+        }
+
+        p {
+            font-size: $base;
+            line-height: 2;
+            color: $color_big_stone_approx;
+            margin-top: 25px;
+        }
+    }
+}
+
+.img-water {
+    position: absolute;
+    left: -13px;
+    top: -16px;
+}
+
+
+
+
+.service {
+    &-text {
+        h3 {
+            font-size: $medium;
+            font-weight: 600;
+            line-height: 2;
+            color: $black; 
+        }
+
+        p {
+            font-size: $base;
+            line-height: 2;
+            color: $color_mirage_approx;
+            margin-top: 7px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            font-weight: 600;
+            font-size: $base;
+            line-height: 2;
+            color: $color_mirage_approx;
+            text-decoration: none;
+        }
+    }
+
+    &-icon {
+        position: absolute;
+        top: -65px;
+        left: 14px;
+    }
+
+    &-area {
+        margin-top: 170px;
+
+        .col-lg-4 {
+            margin-bottom: 100px;
+
+            &:nth-child(even) {
+                border-radius: 8px;
+                box-shadow: 5px 3px 15px 0 rgba(0, 0, 0, 0.05);
+                background-color: $color_pampas_approx;
+            }
+        }
+    }
+
+}
+
+.single-service {
+    padding: 50px 45px 40px 50px;
+    position: relative;
+}
+.bg-content.bg-whiter{
+    // background-color: #f5f3f0;
+    .banner-style{
+        img{
+            position: relative;
+            right: 0;
+        }
+    }
+    .bedrijven-inner{
+        box-shadow: none;
+    }
+}
