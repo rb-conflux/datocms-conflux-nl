@@ -76,19 +76,42 @@ module.exports = (dato, root, i18n) => {
         var filename = page + '/index.md';
         root.createPost('content/' + filename, 'yaml', {
           frontmatter: {
-            title: pageData.title ? pageData.title : "",
+            title: pageData.title,
             seoMetaTags: toHtml(pageData.seoMetaTags),
             menu: { main: { weight: (index+1)*100 } },
-            url: pageData.slug
+            url: pageData.slug,
+            domains_title: pageData.domainsTitle,
+            company_title: pageData.companiesTitle,
+            themes_title: pageData.themesTitle,
+            values_title: pageData.valuesTitle
           }
         });
-        console.log(pageData.toMap())
+        
+     
+        writeFilesForPageItems(pageData, page, 'header');
+        writeFilesForPageItems(pageData, page, 'domains');
+        writeFilesForPageItems(pageData, page, 'companies');
+        writeFilesForPageItems(pageData, page, 'themes');
+        writeFilesForPageItems(pageData, page, 'contact');
+        writeFilesForPageItems(pageData, page, 'values');
+        writeFilesForPageItems(pageData, page, 'work');
+
+
       }
   });
 
   
 
-
+function writeFilesForPageItems(pageData, page, itemName) {
+  if (pageData[itemName]) {
+    pageData[itemName].forEach((item, index) => {
+      root.createPost('content/' + page + '/' + itemName + '-' + (index+1) + '.md', 'yaml', {
+        frontmatter: item.toMap(),
+        content: item.description
+      });
+    })
+  }
+}
 
 
 
