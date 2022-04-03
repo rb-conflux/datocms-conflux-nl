@@ -1,0 +1,101 @@
+body {
+    display: none;
+    box-sizing: border-box
+}
+
+#npreOverlay {
+    background-color: #3c40c6
+}
+
+#npreSlide {
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    width: 50%;
+    height: 30%;
+    padding: 0
+}
+
+#npreLoader {
+    width: 100%;
+    max-width: 50%;
+    left: 25%;
+    height: 25px
+}
+
+#npreBar {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #fff;
+    animation: progress .5s linear infinite
+}
+
+#nprePercentage {
+    color: #fff;
+    text-align: center;
+    top: -100%;
+    margin-top: -15px;
+    font-size: 22px;
+    font-weight: 700
+}
+
+#npreButton {
+    padding: 3px 10px;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    width: 100px;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #23a6ed
+}
+
+@-webkit-keyframes progress {
+    from {
+        background-position: 0 0
+    }
+
+    to {
+        background-position: -60px -60px
+    }
+}
+
+@-moz-keyframes progress {
+    from {
+        background-position: 0 0
+    }
+
+    to {
+        background-position: -60px -60px
+    }
+}
+
+@-ms-keyframes progress {
+    from {
+        background-position: 0 0
+    }
+
+    to {
+        background-position: -60px -60px
+    }
+}
+
+@-o-keyframes progress {
+    from {
+        background-position: 0 0
+    }
+
+    to {
+        background-position: -60px -60px
+    }
+}
+
+@keyframes progress {
+    from {
+        background-position: 0 0
+    }
+
+    to {
+        background-position: -60px -60px
+    }
+}
