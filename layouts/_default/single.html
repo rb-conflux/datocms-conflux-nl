@@ -1,18 +1,7 @@
-{{ partial "header.html" . }}
+{{ partial "page/header.html" . }}
 
-<article class="sheet">
-  <div class="sheet__inner">
-    <h1 class="sheet__title">{{ .Title }}</h1>
-    <p class="sheet__lead">{{ .Params.excerpt }}</p>
-    <div class="sheet__gallery">
-      <img src="{{ .Params.photo }}" />
-    </div>
-    <div class="sheet__body">
-      {{ .Content }}ss
-    </div>
-  </div>
-</article>
+{{ partial "banner.html" . }}
 
-{{ partial "footer.html" . }}
+{{ partial "page/footer.html" . }}
 
 

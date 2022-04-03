@@ -11,13 +11,26 @@
     <!-- Favicon -->
     <!-- <link rel="icon" href="favicon.png"> -->
     <!-- CSS Links -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/preloader.css">
-    <link rel="stylesheet" href="assets/css/slick.min.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    {{ if eq .Site.Params.env "production" }}
+    <link rel="stylesheet" href="/assets/all.css">
+    {{ else }}
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/preloader.css">
+    <link rel="stylesheet" href="/assets/css/slick.min.css">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Modernizr JS -->
-    <script src="assets/js/modernizr-2.8.3.min.js"></script>
+    <script src="/assets/js/modernizr-2.8.3.min.js"></script>
+    {{ end }}
+
+    {{ .Site.Data.settings.faviconMetaTags | safeHTML }}
+    {{ if isset .Params "seometatags" }}
+      {{ .Params.seometatags | safeHTML }}
+    {{ else }}
+      {{ .Site.Data.settings.seoMetaTags | safeHTML }}
+    {{ end }}
+
 </head>
 
 <body>
@@ -29,7 +42,7 @@
     <!-- =================== Navigation =================== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container container-large">
-            <a href="#" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"></a><!-- /.navbar-brand -->
+            <a href="#" class="navbar-brand"><img src="/assets/img/logo.png" alt="logo"></a><!-- /.navbar-brand -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -42,21 +55,12 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {{ $currentNode := . }}
+                    {{ range .Site.Menus.main }}
                     <li class="nav-item">
-                        <a class="nav-link  active-link" aria-current="page" href="#">Home</a>
+                      <a {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}class="nav-link  active-link" aria-current="page" {{else}}class="nav-link"{{end}} href="{{ .URL }}">{{ .Name }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Over ons</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Onze bedrijven</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Onze thema’s</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
+                  {{ end }}
 
                 </ul><!-- ./navbar-nav -->
             </div><!-- ./collapse -->
