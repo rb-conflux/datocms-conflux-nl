@@ -1,59 +1,64 @@
 <!DOCTYPE html>
-<html lang="<%= settings.language %>">
-  <head>
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {{ if eq .Site.Params.env "production" }}
-      <link rel="stylesheet" href="/assets/all.css">
-    {{ end }}
-    {{ .Site.Data.settings.faviconMetaTags | safeHTML }}
-    {{ if isset .Params "seometatags" }}
-      {{ .Params.seometatags | safeHTML }}
-    {{ else }}
-      {{ .Site.Data.settings.seoMetaTags | safeHTML }}
-    {{ end }}
-  </head>
-  <body>
-    <div class="container">
-      <div class="container__sidebar">
-        <div class="sidebar">
-          <h6 class="sidebar__title">
-            <a href="/">{{ .Site.Data.settings.name }}</a>
-          </h6>
+<html lang="en">
 
-          <div class="sidebar__intro">
-            {{ .Site.Data.settings.intro | markdownify }}
-          </div>
+<head>
+    <title>Title</title>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Interactive Website">
+    <meta name="author" content="Nazmul Hussain">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <!-- <link rel="icon" href="favicon.png"> -->
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/preloader.css">
+    <link rel="stylesheet" href="assets/css/slick.min.css">
 
-          <ul class="sidebar__menu">
-            {{ $currentNode := . }}
-            {{ range .Site.Menus.main }}
-              <li{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} class="is-active"{{end}}>
-                <a href="{{ .URL }}">{{ .Name }}</a>
-              </li>
-            {{ end }}
-          </ul>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Modernizr JS -->
+    <script src="assets/js/modernizr-2.8.3.min.js"></script>
+</head>
 
-          <p class="sidebar__social">
-            {{ range .Site.Data.settings.socialProfiles }}
-              <a href="{{ .url }}" class="social social--{{ .type }}"></a>
-            {{ end }}
-          </p>
+<body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+         your browser</a> to improve your experience.
+      </p>
+      <![endif]-->
+    <!-- =================== Navigation =================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container container-large">
+            <a href="#" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"></a><!-- /.navbar-brand -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="hamburger" id="hamburger-1">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div><!-- ./hamburger -->
+            </button><!-- ./navbar-toggler -->
 
-          <div class="sidebar__copyright">
-            {{ .Site.Data.settings.copyright }}
-          </div>
-        </div>
-      </div>
-      <div class="container__body">
-        <div class="container__mobile-header">
-          <div class="mobile-header">
-            <div class="mobile-header__menu">
-              <a href="#" class="hamburger"></a>
-            </div>
-            <div class="mobile-header__logo">
-              <a href="/index.html">{{ .Site.Data.settings.name }}</a>
-            </div>
-          </div>
-        </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link  active-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Over ons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Onze bedrijven</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Onze thema’s</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+                </ul><!-- ./navbar-nav -->
+            </div><!-- ./collapse -->
+        </div><!-- /.container -->
+    </nav>

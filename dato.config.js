@@ -8,11 +8,15 @@ const htmlTag = require('html-tag');
 //
 // <meta name="description" content="foobar" />
 
-const toHtml = (tags) => (
-  tags.map(({ tagName, attributes, content }) => (
-    htmlTag(tagName, attributes, content)
-  )).join("")
-);
+const toHtml = (tags) => {
+  if (tags) {
+    return tags.map(({ tagName, attributes, content }) => (
+      htmlTag(tagName, attributes, content)
+    )).join("")
+  } else {
+    return ""
+  }
+};
 
 // Arguments that will receive the mapping function:
 //
@@ -39,7 +43,7 @@ module.exports = (dato, root, i18n) => {
     });
   });
 
-  // console.log(dato.site)
+
 
 
 
@@ -62,34 +66,28 @@ module.exports = (dato, root, i18n) => {
   });
 */
 
-  //console.log(dato.home)
+  var siteData = dato.site.toMap()
 
-  root.createPost('content/home/index.md', 'yaml', {
-    frontmatter: {
-      title: dato.home.toMap()
-    }
+  var pages = [ 'home', 'pageAbout', 'pageTopic', 'pageCompany', 'pageContact'];
+  
+  pages.forEach((page, index) => {
+      if (dato[page]) {
+        var pageData = dato[page];
+        var filename = page + '/index.md';
+        root.createPost('content/' + filename, 'yaml', {
+          frontmatter: {
+            title: pageData.title ? pageData.title : "",
+            seoMetaTags: toHtml(pageData.seoMetaTags),
+            menu: { main: { weight: (index+1)*100 } },
+            url: pageData.slug
+          }
+        });
+        console.log(pageData.toMap())
+      }
   });
 
-  var pages = {
-    'index.md': 'home',
-    'about.md': 'pageAbout',
-    'topics.md': 'pageTopic',
-    'company.md': 'pageCompany',
-    'contact.md': 'pageContact'
+  
 
-  };
-
-  for (var page in pages) {
-    if (pages[page]) {
-      root.createPost('content/' + page, 'yaml', {
-        frontmatter: {
-          title: dato[pages[page]].toMap()
-        }
-      });
-    } else {
-      console.error('No content found for: ' + page);
-    }
-  }
 
 
 
