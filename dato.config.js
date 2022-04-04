@@ -126,7 +126,7 @@ function addBanner(frontmatter, pageData) {
       short: headerData.short,
       link: headerData.link,
       dark: headerData.dark,
-      image: createImage(headerData.image, 544, 634, 'png')
+      image: createImage(headerData.image, 544, 634, 'webp')
     }
   }
 }  
