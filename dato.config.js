@@ -35,12 +35,24 @@ const toHtml = (tags) => {
 
 module.exports = (dato, root, i18n) => {
 
+  var pages = [ 'home', 'pageAbout', 'pageTopic', 'pageCompany', 'pageContact'];
+
   // Add to the existing Hugo config files some properties coming from data
   // stored on DatoCMS
   ['config.dev.toml', 'config.prod.toml'].forEach(file => {
     root.addToDataFile(file, 'toml', {
       title: dato.site.globalSeo.siteName,
-      languageCode: i18n.locale
+      languageCode: i18n.locale,
+      menu: {
+        main: pages.map((page, index) => {
+          return {
+            identifier: page,
+            name: dato[page].title,
+            url: '/' + dato[page].slug,
+            weight: (index+1) * 100
+          }
+        })
+      }
     });
   });
 
@@ -69,7 +81,7 @@ module.exports = (dato, root, i18n) => {
 
   var siteData = dato.site.toMap()
 
-  var pages = [ 'home', 'pageAbout', 'pageTopic', 'pageCompany', 'pageContact'];
+ 
 
   // TODO abstract path 
 
@@ -79,14 +91,13 @@ module.exports = (dato, root, i18n) => {
   pages.forEach((page, index) => {
       if (dato[page]) {
         var pageData = dato[page];
-        var filename = (page == "home" ? 'home' : pageData.slug) + '/index.md';
+        var filename = (page == "home" ? 'index.md' : pageData.slug + '/index.md');
 
         var frontmatter ={
           type: pageData.slug == '' ? 'home' : pageData.slug,
           title: pageData.title,
-          seoMetaTags: toHtml(pageData.seoMetaTags),
-          menu: { main: { weight: (index+1)*100 } },
-          slug: pageData.slug
+          url: '/' + dato[page].slug,
+          seoMetaTags: toHtml(pageData.seoMetaTags)
         }
 
         addBanner(frontmatter, pageData);

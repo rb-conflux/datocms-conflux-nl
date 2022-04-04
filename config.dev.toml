@@ -7,4 +7,34 @@ Paginate = 5
 # datocms:start
 title = "Creative Inc."
 languageCode = "en"
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 100
+
+[[menu.main]]
+identifier = "pageAbout"
+name = "Over ons"
+url = "/over-ons"
+weight = 200
+
+[[menu.main]]
+identifier = "pageTopic"
+name = "Onze Thema's"
+url = "/onze-themas"
+weight = 300
+
+[[menu.main]]
+identifier = "pageCompany"
+name = "Onze bedrijven"
+url = "/onze-bedrijven"
+weight = 400
+
+[[menu.main]]
+identifier = "pageContact"
+name = "Contact"
+url = "/contact"
+weight = 500
 # datocms:end
