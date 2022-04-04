@@ -42,17 +42,7 @@ module.exports = (dato, root, i18n) => {
   ['config.dev.toml', 'config.prod.toml'].forEach(file => {
     root.addToDataFile(file, 'toml', {
       title: dato.site.globalSeo.siteName,
-      languageCode: i18n.locale,
-      menu: {
-        main: pages.map((page, index) => {
-          return {
-            identifier: page,
-            name: dato[page].title,
-            url: '/' + dato[page].slug,
-            weight: (index+1) * 100
-          }
-        })
-      }
+      languageCode: i18n.locale
     });
   });
 
@@ -91,13 +81,18 @@ module.exports = (dato, root, i18n) => {
   pages.forEach((page, index) => {
       if (dato[page]) {
         var pageData = dato[page];
-        var filename = (page == "home" ? 'index.md' : pageData.slug + '/index.md');
+        
+        var filename = (page == "home" ? '_index.md' : pageData.slug + '/index.md');
 
         var frontmatter ={
           type: pageData.slug == '' ? 'home' : pageData.slug,
           title: pageData.title,
-          url: '/' + dato[page].slug,
-          seoMetaTags: toHtml(pageData.seoMetaTags)
+          seoMetaTags: toHtml(pageData.seoMetaTags),
+          menu: {
+            main: {
+              weight: (index+1)*100
+            }
+          }
         }
 
         addBanner(frontmatter, pageData);
