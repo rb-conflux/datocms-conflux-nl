@@ -7,6 +7,7 @@
     "build:hugo": "NODE_ENV=production hugo --config config.prod.toml",
     "build:assets": "NODE_ENV=production webpack -p --config webpack.prod.config.js",
     "build:datocms": "dato dump",
+    "build_with_webpack": "npm run build:datocms && npm run build:hugo && npm run build:assets",
     "build": "npm run build:datocms && npm run build:hugo",
     "start:assets": "NODE_ENV=development webpack-dev-server --open --content-base public/ --config webpack.dev.config.js",
     "start:hugo": "hugo -w --config config.dev.toml",
