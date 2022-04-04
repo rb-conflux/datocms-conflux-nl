@@ -196,7 +196,7 @@ function addValues(frontmatter, pageData) {
       items: pageData.values.map((item, index) => { 
         return {
         title: item.title,
-        short: item.short,
+        short: dastRenderer.render(item.short),
         // icon: item.icon,
         weight: index,
         even: (index % 2 == 0)
