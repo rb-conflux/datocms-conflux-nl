@@ -14,7 +14,9 @@
                             {{range .items}}
                             <div class="themes-single">
                                 <div class="themes-single-icon">
-                                    <img src="/assets/img/home/Processor.svg" alt="icon">
+                                    {{if .icon}}
+                                    <img src="{{.icon.src}}" alt="{{.icon.alt}}">
+                                    {{end}}
                                 </div><!-- /.themes-single-icon -->
                                 <div class="themes-single-text">
                                     <h3>{{.title}}</h3>
