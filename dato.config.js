@@ -159,9 +159,9 @@ function addCompanies(frontmatter, pageData) {
           name: item.name,
           short: item.short,
           long: item.long,
-          url_website: item.url_website,
-          url_jobs: item.url_jobs,
-          url_cases: item.url_cases,
+          url_website: item.urlWebsite,
+          url_jobs: item.urlJobs,
+          url_cases: item.urlCases,
           weight: index,
           even: (index % 2 == 0)
         }
