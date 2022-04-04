@@ -17,7 +17,9 @@
                             {{end}}
                         </div><!-- /.banner-text -->
                         <div class="banner-right-img">
-                            <img class="banner-img" src="/assets/img/banner-right.png" alt="img">
+                            {{if .image}}
+                            <img class="banner-img" src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}">
+                            {{end}}
                             <!-- <img class="banner-img" src="assets/img/1.png" alt="img"> -->
                             <img class="img-water" src="/assets/img/img-water.png" alt="img-water">
                         </div><!-- /.banner-right-img -->
@@ -58,7 +60,9 @@
                         {{end}}
                     </div><!-- /.banner-text -->
                     <div class="banner-right-img">
-                        <img class="banner-img" src="/assets/img/banner-right.png" alt="img">
+                        {{if .image}}
+                        <img class="banner-img" src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}">
+                        {{end}}
                         <img class="img-water" src="/assets/img/img-water.png" alt="img-water">
                     </div><!-- /.banner-right-img -->
                 </div><!-- /.bedrijven-inner -->
