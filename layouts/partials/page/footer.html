@@ -23,64 +23,41 @@
           </div><!-- /.col-lg-5 -->
           <div class="col-xl-7 col-lg-8 col-md-9">
               <div class="footer-right">
-
+               
+                <li class="nav-item">
+                </li>
+           
                   <div class="footer-single">
                       <h3>Links</h3>
+                      {{ $currentNode := . }}
+                      {{ range .Site.Menus.main }}
                       <ul>
-                          <li><a href="#">Home</a></li>
+                          <li><a href="{{.URL}}">{{.Name}}</a></li>
                       </ul>
-                      <ul>
-                          <li><a href="#">Over ons</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Onze bedrijven</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Onze thema’s</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Contact</a></li>
-                      </ul>
+                     {{end}}
                   </div><!-- /.footer-single -->
+                  {{ if .Params.companies }}
                   <div class="footer-single">
-                      <h3>Bedrijven</h3>
+                      <h3>{{.Params.companies.title}}</h3>
+                      {{range .Params.companies.items}}
                       <ul>
-                          <li><a href="#">JDriven</a></li>
+                          <li><a href="#">{{.name}}</a></li>
                       </ul>
-                      <ul>
-                          <li><a href="#">JCore</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Divotion</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Bigdata</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Vantage AI</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Infuze</a></li>
-                      </ul>
+                      {{end}}
+                    
                   </div><!-- /.footer-single -->
+                  {{end}}
+                  {{ if .Params.themes }}
                   <div class="footer-single">
-                      <h3>Thema’s</h3>
+                      <h3>{{.Params.themes.title}}</h3>
+                      {{range .Params.themes.items}}
                       <ul>
-                          <li><a href="#">Energietransitie</a></li>
+                          <li><a href="#">{{.title}}</a></li>
                       </ul>
-                      <ul>
-                          <li><a href="#">Logistiek optimalisatie</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Onze bedrijven</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Onze thema’s</a></li>
-                      </ul>
-                      <ul>
-                          <li><a href="#">Self service</a></li>
-                      </ul>
+                      {{end}}
+                      
                   </div><!-- /.footer-single -->
+                  {{end}}
               </div><!-- /.footer-right -->
 
           </div><!-- /.col-lg-7 -->
