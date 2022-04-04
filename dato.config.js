@@ -1,5 +1,6 @@
 const htmlTag = require('html-tag');
 const dastRenderer = require('datocms-structured-text-to-html-string');
+const { makeJQueryPlugin } = require('imagesloaded');
 
 // This function helps transforming structures like:
 //
@@ -125,7 +126,7 @@ function addBanner(frontmatter, pageData) {
       short: headerData.short,
       link: headerData.link,
       dark: headerData.dark,
-      image: headerData.image
+      image: createImage(headerData.image, 544, 634, 'png')
     }
   }
 }  
@@ -174,6 +175,15 @@ function createIcon(icon) {
     return {
       src: icon.url({ w: 60, h: 60, fm: 'svg' }),
       alt: icon.alt
+    }
+  }
+}
+
+function createImage(image, width, height, format) {
+  if (image) {
+    return {
+      src: image.url({ w: width, h: height, fm: format }),
+      alt: image.alt
     }
   }
 }
