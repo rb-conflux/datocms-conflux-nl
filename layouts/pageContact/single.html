@@ -1,0 +1,19 @@
+{{ partial "page/header.html" . }}
+
+
+{{if .Params.banner}}
+{{ partial "shared/banner.html" .Params.banner }}
+{{end}}
+
+
+{{if .Params.contactBlock}}} 
+{{ partial "shared/block-light.html" .Params.contactBlock }}
+{{end}}
+
+{{if .Params.contact}}
+{{ partial "shared/contact.html" .Params.contact }}
+{{end}}
+
+{{ partial "page/footer.html" . }}
+
+

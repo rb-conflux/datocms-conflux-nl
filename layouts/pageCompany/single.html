@@ -1,0 +1,38 @@
+{{ partial "page/header.html" . }}
+
+{{if .Params.banner}}
+{{ partial "shared/banner.html" .Params.banner }}
+{{end}}
+
+
+<section class="service-area">
+    <div class="container">
+        <div class="row spacer-x">
+            {{range .Params.companies.items }}
+            <div class="col-lg-4 col-md-6">
+                <div class="single-service">
+                    <div class="service-inner">
+                        <div class="service-icon bg-green">
+                            <img src="/assets/img/bedrijven/jDriven.svg" alt="icon">
+                        </div><!-- /.service-icon -->
+                        <div class="service-text">
+                            <h3>{{.name}}</h3>
+                            <p>{{.long | safeHTML}}</p>
+                            <a href="#">jdriven.com <img src="/assets/img/bedrijven/arrow-right.svg" alt="icon"></a>
+                        </div><!-- /.service-text -->
+                    </div><!-- /.service-inner -->
+                </div><!-- /.single-service -->
+            </div><!-- /.col-lg-4 -->
+            {{end}}
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.service-area -->
+
+
+{{if .Params.contact}}
+{{ partial "shared/contact.html" .Params.contact }}
+{{end}}
+
+{{ partial "page/footer.html" . }}
+
+
