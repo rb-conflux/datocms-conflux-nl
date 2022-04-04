@@ -137,7 +137,10 @@ function addDomains(frontmatter, pageData) {
       items: pageData.domains.map((item, index) => { return {
         title: item.title,
         short: dastRenderer.render(item.short),
-        icon: item.icon,
+        icon: {
+          src: item.icon.url({ w: 60, h: 60, fm: 'svg' }),
+          alt: item.icon.alt
+        },
         weight: index,
         even: (index % 2 == 0)
       }})
@@ -166,6 +169,15 @@ function addCompanies(frontmatter, pageData) {
   }
 }
 
+function createIcon(icon) {
+  if (icon) {
+    return {
+      src: icon.url({ w: 60, h: 60, fm: 'svg' }),
+      alt: icon.alt
+    }
+  }
+}
+
 function addThemes(frontmatter, pageData) {
   if(pageData.themes) {
     frontmatter.themes = {
@@ -174,7 +186,7 @@ function addThemes(frontmatter, pageData) {
         title: item.title,
         short: item.short,
         long: item.long,
-        icon: item.icon,
+        icon: createIcon(item.icon),
         image: item.image,
         weight: index,
         even: (index % 2 == 0)
@@ -186,10 +198,6 @@ function addThemes(frontmatter, pageData) {
 
 
 function addValues(frontmatter, pageData) {
-
-  // TODO fix icon
-//console.log(pageData.icon)
-
   if(pageData.values) {
     frontmatter.values = {
       title: pageData.valuesTitle,
@@ -197,7 +205,7 @@ function addValues(frontmatter, pageData) {
         return {
         title: item.title,
         short: dastRenderer.render(item.short),
-        // icon: item.icon,
+        icon:  createIcon(item.icon),
         weight: index,
         even: (index % 2 == 0)
       }})

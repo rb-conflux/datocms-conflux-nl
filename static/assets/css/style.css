@@ -1928,4 +1928,12 @@ textarea {
     padding-right: 10px;
   }
 }
+
+.fix_banner_link, .fix_banner_link:hover {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #172744;
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */

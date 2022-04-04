@@ -15,7 +15,9 @@
                         <img src="/assets/img/1.png" alt="img">
                     </div><!-- /.content-img -->
                     <div class="content-text">
-                        <img src="/assets/img/themas/Processor.svg" alt="icon">
+                        {{if .icon}}
+                        <img src="{{.icon.src}}" alt="{{.icon.alt}}">
+                        {{end}}
                         <h2>{{.title}}</h2>
                         <p>{{.long}}</p>
                     </div><!-- /.content-text -->

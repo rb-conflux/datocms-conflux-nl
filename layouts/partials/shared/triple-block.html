@@ -15,7 +15,9 @@
                     <div class="sinngle-core-inner">
 
                         <div class="core-icon">
-                            <img src="/assets/img/over-ons/Star.svg" alt="icon">
+                            {{if .icon}}
+                            <img src="{{.icon.src}}" alt="{{.icon.alt}}">
+                            {{end}}
                         </div><!-- /.core-icon -->
                         <div class="core-text">
                             <h2>{{.title}}</h2>
