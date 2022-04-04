@@ -1,3 +1,5 @@
+{{if .dark}}
+
 <section class="bedrijven-area hero-area">
     <div class="container container-large">
         <div class="row">
@@ -31,3 +33,33 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
   </section><!-- /.bedrijven-area -->
+  {{else}}
+ <!-- =================== bedrijven Area =================== -->
+ <section class="bedrijven-area hero-area">
+    <div class="container container-large">
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-content bg-whiter">
+                    <div class="inner-container">
+                    <div class="banner-style">
+                        <!-- <img src="assets/img/banner-bg.png" alt="banner style"> -->
+                    </div>
+                    
+                    <!-- /.banner-style -->
+                <div class="bedrijven-inner">
+                    <div class="banner-text">
+                        <h2>{{ .title }}</h2>
+                        <p>{{.short}}</p>
+                    </div><!-- /.banner-text -->
+                    <div class="banner-right-img">
+                        <img class="banner-img" src="/assets/img/banner-right.png" alt="img">
+                        <img class="img-water" src="/assets/img/img-water.png" alt="img-water">
+                    </div><!-- /.banner-right-img -->
+                </div><!-- /.bedrijven-inner -->
+            </div><!-- /.inner-container -->
+            </div><!-- /.bg-content -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.bedrijven-area -->
+{{end}}

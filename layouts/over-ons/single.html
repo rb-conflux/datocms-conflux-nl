@@ -2,8 +2,15 @@
 
 
 {{if .Params.banner}}
-
 {{ partial "shared/banner.html" .Params.banner }}
+{{end}}
+
+{{if .Params.values}}
+{{ partial "shared/values.html" .Params.values }}
+{{end}}
+
+{{if .Params.addedValue}}} 
+{{ partial "shared/block.html" .Params.addedValue }}
 {{end}}
 
 {{ partial "page/footer.html" . }}

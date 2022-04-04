@@ -1,5 +1,5 @@
 const htmlTag = require('html-tag');
-const render = require('datocms-structured-text-to-html-string');
+const dastRenderer = require('datocms-structured-text-to-html-string');
 
 // This function helps transforming structures like:
 //
@@ -94,8 +94,11 @@ module.exports = (dato, root, i18n) => {
         addBanner(frontmatter, pageData);
         addDomains(frontmatter, pageData);
         addCompanies(frontmatter, pageData)
-        addThemes(frontmatter, pageData)
-        addContact(frontmatter, pageData)
+        addThemes(frontmatter, pageData);
+        addContact(frontmatter, pageData);
+        addValues(frontmatter, pageData);
+
+        addBlock(frontmatter, pageData, 'addedValue');
 
 
         addFooterData(frontmatter, dato)
@@ -176,14 +179,43 @@ function addThemes(frontmatter, pageData) {
       }})
     }    
   }
+
 }
-// TODO render dast
+
+
+function addValues(frontmatter, pageData) {
+  if(pageData.valuesTitle) {
+    frontmatter.values = {
+      title: pageData.valuesTitle,
+      items: pageData.values.map((item, index) => { return {
+        title: item.title,
+        short: item.short,
+        icon: item.icon,
+        weight: index,
+        even: (index % 2 == 0)
+      }})
+    }    
+  }
+}
+
+function addBlock(frontmatter, pageData, field) {
+  // console.log(pageData.toMap());
+  // console.log(field)
+  if (pageData[field]) {
+    frontmatter[field] = {};
+    frontmatter[field].title = pageData[field].title;
+    frontmatter[field].short = pageData[field].short;
+    frontmatter[field].image = pageData[field].image;
+  }
+}
+
+
 function addContact(frontmatter, pageData) {
   if (pageData && pageData.contact && pageData.contact.length > 0) {
     var contactData = pageData.contact[0];
     frontmatter.contact = {
       title: contactData.title,
-      short: render.render(contactData.short),
+      short: dastRenderer.render(contactData.short),
     }
   }
 }  
