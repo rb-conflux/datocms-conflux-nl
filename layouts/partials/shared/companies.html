@@ -13,7 +13,7 @@
                     <div class="config-right">
                         <div class="config-right-single">
                             <!-- single -->
-                            {{ range .companies }}
+                            {{ range .items }}
                             {{ if .even }}
                             <div class="config-single">
                                 <div class="config-icon">
@@ -27,7 +27,7 @@
                             {{end}}
                         </div><!-- /.config-right-single -->
                         <div class="config-right-single">
-                            {{ range .companies }}
+                            {{ range .items }}
                             {{ if not .even }}
                             <div class="config-single">
                                 <div class="config-icon">

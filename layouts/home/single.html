@@ -13,6 +13,14 @@
 {{ partial "shared/companies.html" .Params.companies }}
 {{end}}
 
+{{if .Params.themes}}
+{{ partial "shared/themes.html" .Params.themes }}
+{{end}}
+
+{{if .Params.contact}}
+{{ partial "shared/contact.html" .Params.contact }}
+{{end}}
+
 {{ partial "page/footer.html" . }}
 
 

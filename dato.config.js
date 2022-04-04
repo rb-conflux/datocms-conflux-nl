@@ -92,6 +92,8 @@ module.exports = (dato, root, i18n) => {
         addBanner(frontmatter, pageData);
         addDomains(frontmatter, pageData);
         addCompanies(frontmatter, pageData)
+        addThemes(frontmatter, pageData)
+        addContact(frontmatter, pageData)
 
 
         root.createPost('content/' + filename, 'yaml', {
@@ -122,7 +124,7 @@ function addDomains(frontmatter, pageData) {
   if(pageData.domainsTitle) {
     frontmatter.domains = {
       title: pageData.domainsTitle,
-      domains: pageData.domains.map((item, index) => { return {
+      items: pageData.domains.map((item, index) => { return {
         title: item.title,
         short: item.short,
         icon: item.icon,
@@ -138,7 +140,7 @@ function addCompanies(frontmatter, pageData) {
     frontmatter.companies = {
       title:pageData.companiesTitle,
       short:pageData.companiesShort,
-      companies: pageData.companies.map((item, index) => {
+      items: pageData.companies.map((item, index) => {
         return {
           name: item.name,
           short: item.short,
@@ -154,18 +156,34 @@ function addCompanies(frontmatter, pageData) {
   }
 }
 
-function writeFilesForPageItems(pageData, page, itemName) {
-  if (pageData[itemName]) {
-    pageData[itemName].forEach((item, index) => {
-      root.createPost('content/' +(page == "home" ? 'home' : pageData.slug)  + '/' + itemName + '-' + (index+1) + '.md', 'yaml', {
-        frontmatter: {
-          title: item.title
-        },
-        content: item.description
-      });
-    })
+function addThemes(frontmatter, pageData) {
+  if(pageData.themesTitle) {
+    frontmatter.themes = {
+      title: pageData.themesTitle,
+      items: pageData.themes.map((item, index) => { return {
+        title: item.title,
+        short: item.short,
+        icon: item.icon,
+        image: item.image,
+        weight: index,
+        even: (index % 2 == 0)
+      }})
+    }    
   }
 }
+
+function addContact(frontmatter, pageData) {
+  if (pageData && pageData.contact && pageData.contact.length > 0) {
+    var contactData = pageData.contact[0];
+    console.log(contactData.short)
+    console.dir(contactData.short)
+    frontmatter.contact = {
+      title: contactData.title,
+      short: contactData.short.value,
+    }
+  }
+}  
+
 
 
 
