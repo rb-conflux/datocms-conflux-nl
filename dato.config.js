@@ -186,13 +186,19 @@ function addThemes(frontmatter, pageData) {
 
 
 function addValues(frontmatter, pageData) {
+
+  // TODO fix icon
+//console.log(pageData.icon)
+
   if(pageData.values) {
     frontmatter.values = {
       title: pageData.valuesTitle,
-      items: pageData.values.map((item, index) => { return {
+      items: pageData.values.map((item, index) => { 
+        console.log(item.icon)
+        return {
         title: item.title,
         short: item.short,
-        icon: item.icon,
+        // icon: item.icon,
         weight: index,
         even: (index % 2 == 0)
       }})
