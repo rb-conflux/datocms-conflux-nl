@@ -35,7 +35,7 @@ const toHtml = (tags) => {
 
 module.exports = (dato, root, i18n) => {
 
-  var pages = [ 'home', 'pageAbout', 'pageTopic', 'pageCompany', 'pageContact'];
+  var pages = [ 'home', 'pageAbout', 'pageTheme', 'pageCompany', 'pageContact'];
 
   // Add to the existing Hugo config files some properties coming from data
   // stored on DatoCMS
@@ -81,7 +81,7 @@ module.exports = (dato, root, i18n) => {
         var filename = (page == "home" ? '_index.md' : pageData.slug + '/index.md');
 
         var frontmatter ={
-          type: pageData.slug == '' ? 'home' : pageData.slug,
+          type: page,
           title: pageData.title,
           seoMetaTags: toHtml(pageData.seoMetaTags),
           menu: {
@@ -130,7 +130,7 @@ function addBanner(frontmatter, pageData) {
 }  
 
 function addDomains(frontmatter, pageData) {
-  if(pageData.domainsTitle) {
+  if(pageData.domains) {
     frontmatter.domains = {
       title: pageData.domainsTitle,
       items: pageData.domains.map((item, index) => { return {
@@ -145,7 +145,7 @@ function addDomains(frontmatter, pageData) {
 }
 
 function addCompanies(frontmatter, pageData) {
-  if (pageData.companiesTitle) {
+  if (pageData.companies) {
     frontmatter.companies = {
       title:pageData.companiesTitle,
       short:pageData.companiesShort,
@@ -166,12 +166,13 @@ function addCompanies(frontmatter, pageData) {
 }
 
 function addThemes(frontmatter, pageData) {
-  if(pageData.themesTitle) {
+  if(pageData.themes) {
     frontmatter.themes = {
       title: pageData.themesTitle,
       items: pageData.themes.map((item, index) => { return {
         title: item.title,
         short: item.short,
+        long: item.long,
         icon: item.icon,
         image: item.image,
         weight: index,
@@ -184,7 +185,7 @@ function addThemes(frontmatter, pageData) {
 
 
 function addValues(frontmatter, pageData) {
-  if(pageData.valuesTitle) {
+  if(pageData.values) {
     frontmatter.values = {
       title: pageData.valuesTitle,
       items: pageData.values.map((item, index) => { return {
@@ -199,13 +200,13 @@ function addValues(frontmatter, pageData) {
 }
 
 function addBlock(frontmatter, pageData, field) {
-  // console.log(pageData.toMap());
-  // console.log(field)
-  if (pageData[field]) {
-    frontmatter[field] = {};
-    frontmatter[field].title = pageData[field].title;
-    frontmatter[field].short = pageData[field].short;
-    frontmatter[field].image = pageData[field].image;
+  if (pageData[field] && pageData[field].length > 0) {
+    frontmatter[field] = {
+      title: pageData[field][0].title,
+      short: dastRenderer.render(pageData[field][0].short),
+      image: pageData[field][0].image
+    };
+
   }
 }
 
@@ -236,60 +237,12 @@ function addFooterData(frontmatter, dato) {
       title: dato.home.themesTitle,
       items: dato.home.themes.map((item, index) => { return {
         title: item.title,
-        url: dato.pageTopic.slug + '#' + item.slug,
+        url: dato.pageTheme.slug + '#' + item.slug,
         weight: (index+1) * 100 
       }})
     }
   }
 }
-
-
-
-
-  // root.createPost('content/home/service.' + '.md', 'yaml', {
-
-  // })
-
-
-
-  /*
-    // Create a markdown file with content coming from the `about_page` item
-    // type stored in DatoCMS
-    root.createPost(`content/about.md`, 'yaml', {
-      frontmatter: {
-        title: dato.aboutPage.title,
-        subtitle: dato.aboutPage.subtitle,
-        photo: dato.aboutPage.photo.url({ w: 800, fm: 'jpg', auto: 'compress' }),
-        seoMetaTags: toHtml(dato.aboutPage.seoMetaTags),
-        menu: { main: { weight: 100 } }
-      },
-      content: dato.aboutPage.bio
-    });
-    */
-  /*
-    // Create a `work` directory (or empty it if already exists)...
-    root.directory('content/works', dir => {
-      // ...and for each of the works stored online...
-      dato.works.forEach((work, index) => {
-        // ...create a markdown file with all the metadata in the frontmatter
-        dir.createPost(`${work.slug}.md`, 'yaml', {
-          frontmatter: {
-            title: work.title,
-            coverImage: work.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
-            image: work.coverImage.url({ fm: 'jpg', auto: 'compress' }),
-            detailImage: work.coverImage.url({ w: 600, fm: 'jpg', auto: 'compress' }),
-            excerpt: work.excerpt,
-            seoMetaTags: toHtml(work.seoMetaTags),
-            extraImages: work.gallery.map(item =>
-              item.url({ h: 300, fm: 'jpg', auto: 'compress' })
-            ),
-            weight: index
-          },
-          content: work.description
-        });
-      });
-    });
-  */
 };
 
 
