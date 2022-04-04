@@ -5,6 +5,6 @@ Paginate = 5
   env = "development"
 
 # datocms:start
-title = "Creative Inc."
-languageCode = "en"
+title = "Conflux"
+languageCode = "nl"
 # datocms:end
