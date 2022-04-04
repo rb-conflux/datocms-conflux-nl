@@ -1,0 +1,22 @@
+{{ partial "page/header.html" . }}
+
+
+{{if .Params.banner}}
+{{ partial "shared/banner.html" .Params.banner }}
+{{end}}
+
+{{if .Params.values}}
+{{ partial "shared/triple-block.html" .Params.values }}
+{{end}}
+
+{{if .Params.addedValue}}} 
+{{ partial "shared/block.html" .Params.addedValue }}
+{{end}}
+
+{{if .Params.contact}}
+{{ partial "shared/contact.html" .Params.contact }}
+{{end}}
+
+{{ partial "page/footer.html" . }}
+
+

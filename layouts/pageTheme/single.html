@@ -1,0 +1,62 @@
+{{ partial "page/header.html" . }}
+
+{{if .Params.banner}}
+{{ partial "shared/banner.html" .Params.banner }}
+{{end}}
+
+{{range .Params.themes.items }}
+{{if .even}}
+<section class="content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="content-inner">
+                    <div class="content-img">
+                        <img src="/assets/img/1.png" alt="img">
+                    </div><!-- /.content-img -->
+                    <div class="content-text">
+                        <img src="/assets/img/themas/Processor.svg" alt="icon">
+                        <h2>{{.title}}</h2>
+                        <p>{{.long}}</p>
+                    </div><!-- /.content-text -->
+                </div><!-- /.content-inner -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.content-area -->
+
+{{else}}
+<section class="content-area ">
+    <div class="container container-large">
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-content">
+                    <div class="style">
+                        <img src="/assets/img/home/themas-bg.svg" alt="themas-bg">
+                    </div><!-- /.style -->
+                    <div class="content-inner content-2 self-serve inner-container">
+                        <div class="content-img">
+                            <img src="/assets/img/1.png" alt="img">
+                        </div><!-- /.content-img -->
+                        <div class="content-text">
+                            <img src="/assets/img/themas/Like.svg" alt="icon">
+                            <h2>{{.title}}</h2>
+                            <p>{{.long}}</p>
+                        </div><!-- /.content-text -->
+
+                    </div><!-- /.content-inner -->
+                </div><!-- /.bg-content -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.content-area -->
+{{end}}
+{{end}}
+
+{{if .Params.contact}}
+{{ partial "shared/contact.html" .Params.contact }}
+{{end}}
+
+{{ partial "page/footer.html" . }}
+
+

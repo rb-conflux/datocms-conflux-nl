@@ -99,6 +99,7 @@ module.exports = (dato, root, i18n) => {
         addValues(frontmatter, pageData);
 
         addBlock(frontmatter, pageData, 'addedValue');
+        addBlock(frontmatter, pageData, 'contactBlock');
 
 
         addFooterData(frontmatter, dato)
