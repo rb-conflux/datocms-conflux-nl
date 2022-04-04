@@ -50,7 +50,6 @@ module.exports = (dato, root, i18n) => {
 
 
 
-  /*
   // Create a YAML data file to store global data about the site
   root.createDataFile('data/settings.yml', 'yaml', {
     name: dato.site.globalSeo.siteName,
@@ -66,8 +65,10 @@ module.exports = (dato, root, i18n) => {
     }),
     faviconMetaTags: toHtml(dato.site.faviconMetaTags),
     seoMetaTags: toHtml(dato.home.seoMetaTags)
+
+   
   });
-*/
+
 
   var siteData = dato.site.toMap()
 
@@ -100,6 +101,9 @@ module.exports = (dato, root, i18n) => {
         addCompanies(frontmatter, pageData)
         addThemes(frontmatter, pageData)
         addContact(frontmatter, pageData)
+
+
+        addFooterData(frontmatter, dato)
 
 
 
@@ -182,8 +186,6 @@ function addThemes(frontmatter, pageData) {
 function addContact(frontmatter, pageData) {
   if (pageData && pageData.contact && pageData.contact.length > 0) {
     var contactData = pageData.contact[0];
-    console.log(contactData.short)
-    console.dir(contactData.short)
     frontmatter.contact = {
       title: contactData.title,
       short: render.render(contactData.short),
@@ -191,6 +193,28 @@ function addContact(frontmatter, pageData) {
   }
 }  
 
+function addFooterData(frontmatter, dato) {
+  frontmatter.footer = {
+    companies: {
+      title: dato.home.companiesTitle,
+      items: dato.home.companies.map((company, index) => {
+        return { 
+          name: company.name, 
+          url: company.website_url,
+          weight: (index+1) * 100 
+        }
+      })
+    },
+    themes: {
+      title: dato.home.themesTitle,
+      items: dato.home.themes.map((item, index) => { return {
+        title: item.title,
+        url: dato.pageTopic.slug + '#' + item.slug,
+        weight: (index+1) * 100 
+      }})
+    }
+  }
+}
 
 
 
