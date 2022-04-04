@@ -69,44 +69,98 @@ module.exports = (dato, root, i18n) => {
   var siteData = dato.site.toMap()
 
   var pages = [ 'home', 'pageAbout', 'pageTopic', 'pageCompany', 'pageContact'];
+
+  // TODO abstract path 
   
   pages.forEach((page, index) => {
       if (dato[page]) {
         var pageData = dato[page];
-        var filename = page + '/index.md';
+        var filename = (page == "home" ? 'home' : pageData.slug) + '/index.md';
+
+        var frontmatter ={
+          type: pageData.slug == '' ? 'home' : pageData.slug,
+          title: pageData.title,
+          seoMetaTags: toHtml(pageData.seoMetaTags),
+          menu: { main: { weight: (index+1)*100 } },
+          url: pageData.slug,
+          domains_title: pageData.domainsTitle,
+          company_title: pageData.companiesTitle,
+          themes_title: pageData.themesTitle,
+          values_title: pageData.valuesTitle
+        }
+
+        addBanner(frontmatter, pageData);
+        addDomains(frontmatter, pageData);
+        addCompanies(frontmatter, pageData)
+
+
         root.createPost('content/' + filename, 'yaml', {
-          frontmatter: {
-            title: pageData.title,
-            seoMetaTags: toHtml(pageData.seoMetaTags),
-            menu: { main: { weight: (index+1)*100 } },
-            url: pageData.slug,
-            domains_title: pageData.domainsTitle,
-            company_title: pageData.companiesTitle,
-            themes_title: pageData.themesTitle,
-            values_title: pageData.valuesTitle
-          }
+          frontmatter: frontmatter
         });
         
-     
-        writeFilesForPageItems(pageData, page, 'header');
-        writeFilesForPageItems(pageData, page, 'domains');
-        writeFilesForPageItems(pageData, page, 'companies');
-        writeFilesForPageItems(pageData, page, 'themes');
-        writeFilesForPageItems(pageData, page, 'contact');
-        writeFilesForPageItems(pageData, page, 'values');
-        writeFilesForPageItems(pageData, page, 'work');
+        
 
 
       }
   });
 
   
+function addBanner(frontmatter, pageData) {
+  if (pageData && pageData.header && pageData.header.length > 0  ) {
+    var headerData = pageData.header[0];
+    frontmatter.banner = {
+      title: headerData.title,
+      short: headerData.short,
+      link: headerData.link,
+      dark: headerData.dark,
+      image: headerData.image
+    }
+  }
+}  
+
+function addDomains(frontmatter, pageData) {
+  if(pageData.domainsTitle) {
+    frontmatter.domains = {
+      title: pageData.domainsTitle,
+      domains: pageData.domains.map((item, index) => { return {
+        title: item.title,
+        short: item.short,
+        icon: item.icon,
+        weight: index,
+        even: (index % 2 == 0)
+      }})
+    }    
+  }
+}
+
+function addCompanies(frontmatter, pageData) {
+  if (pageData.companiesTitle) {
+    frontmatter.companies = {
+      title:pageData.companiesTitle,
+      short:pageData.companiesShort,
+      companies: pageData.companies.map((item, index) => {
+        return {
+          name: item.name,
+          short: item.short,
+          long: item.long,
+          url_website: item.url_website,
+          url_jobs: item.url_jobs,
+          url_cases: item.url_cases,
+          weight: index,
+          even: (index % 2 == 0)
+        }
+      })
+    }
+  }
+}
 
 function writeFilesForPageItems(pageData, page, itemName) {
   if (pageData[itemName]) {
     pageData[itemName].forEach((item, index) => {
-      root.createPost('content/' + page + '/' + itemName + '-' + (index+1) + '.md', 'yaml', {
-        frontmatter: item.toMap(),
+      root.createPost('content/' +(page == "home" ? 'home' : pageData.slug)  + '/' + itemName + '-' + (index+1) + '.md', 'yaml', {
+        frontmatter: {
+          title: item.title
+        },
         content: item.description
       });
     })

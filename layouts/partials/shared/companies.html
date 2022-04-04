@@ -1,0 +1,48 @@
+  <!-- =================== config Area =================== -->
+  <section class="config-area">
+    <div class="container">
+        <div class="row spacer-x">
+            <div class="col-12">
+                <div class="config-inner">
+                    <div class="config-left title">
+                        <h2>{{.title}}</h2>
+                        <p>{{.short}}</p>
+                        <a href="#">Ontdek meer <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
+
+                    </div><!-- /.config-inner-left -->
+                    <div class="config-right">
+                        <div class="config-right-single">
+                            <!-- single -->
+                            {{ range .companies }}
+                            {{ if .even }}
+                            <div class="config-single">
+                                <div class="config-icon">
+                                    <img src="/assets/img/home/1.svg" alt="icon">
+                                </div><!-- /.config-icon -->
+                                <div class="config-text">
+                                    <p>{{.short}}</p>
+                                </div><!-- /.config-text -->
+                            </div><!-- /.config-single -->
+                            {{end}}
+                            {{end}}
+                        </div><!-- /.config-right-single -->
+                        <div class="config-right-single">
+                            {{ range .companies }}
+                            {{ if not .even }}
+                            <div class="config-single">
+                                <div class="config-icon">
+                                    <img src="/assets/img/home/1.svg" alt="icon">
+                                </div><!-- /.config-icon -->
+                                <div class="config-text">
+                                    <p>{{.short}}</p>
+                                </div><!-- /.config-text -->
+                            </div><!-- /.config-single -->
+                            {{end}}
+                            {{end}}
+                        </div><!-- /.config-right-single -->
+                    </div><!-- /.config-right -->
+                </div><!-- /.config-inner -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.config-area -->

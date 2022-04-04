@@ -1,0 +1,11 @@
+{{ partial "page/header.html" . }}
+
+
+{{if .Params.banner}}
+
+{{ partial "shared/banner.html" .Params.banner }}
+{{end}}
+
+{{ partial "page/footer.html" . }}
+
+
