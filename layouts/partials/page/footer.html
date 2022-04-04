@@ -36,23 +36,23 @@
                       </ul>
                      {{end}}
                   </div><!-- /.footer-single -->
-                  {{ if .Params.companies }}
+                  {{ if .Params.footer.companies }}
                   <div class="footer-single">
-                      <h3>{{.Params.companies.title}}</h3>
-                      {{range .Params.companies.items}}
+                      <h3>{{.Params.footer.companies.title}}</h3>
+                      {{range .Params.footer.companies.items}}
                       <ul>
-                          <li><a href="#">{{.name}}</a></li>
+                          <li><a href="{{.url}}">{{.name}}</a></li>
                       </ul>
                       {{end}}
                     
                   </div><!-- /.footer-single -->
                   {{end}}
-                  {{ if .Params.themes }}
+                  {{ if .Params.footer.themes }}
                   <div class="footer-single">
-                      <h3>{{.Params.themes.title}}</h3>
-                      {{range .Params.themes.items}}
+                      <h3>{{.Params.footer.themes.title}}</h3>
+                      {{range .Params.footer.themes.items}}
                       <ul>
-                          <li><a href="#">{{.title}}</a></li>
+                          <li><a href="{{.url}}">{{.title}}</a></li>
                       </ul>
                       {{end}}
                       

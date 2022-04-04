@@ -1,0 +1,34 @@
+<section class="themes-area">
+    <div class="container container-large">
+        <div class="row">
+            <div class="col-12">
+                <div class="themes-inner-area">
+                    <div class="inner-container">
+                        <div class="style">
+                            <img src="/assets/img/home/themas-bg.svg" alt="themas-bg">
+                        </div><!-- /.style -->
+                        <div class="themes-title title">
+                            <h2>Onze thema’s</h2>
+                        </div><!-- /.themes-title -->
+                        <div class="themes-inner">
+                            {{range .items}}
+                            <div class="themes-single">
+                                <div class="themes-single-icon">
+                                    <img src="/assets/img/home/Processor.svg" alt="icon">
+                                </div><!-- /.themes-single-icon -->
+                                <div class="themes-single-text">
+                                    <h3>{{.title}}</h3>
+                                    <p>{{.short}}
+                                    </p>
+                                    <a href="#">Ontdek meer <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                                </div><!-- /.themes-single-text -->
+                            </div><!-- /.themes-single -->
+                            {{end}}
+                        </div><!-- /.themes-inner -->
+                    </div><!-- /.themes-inner-container -->
+                </div><!-- /.themes-inner-area -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+</section><!-- /.themes-area -->

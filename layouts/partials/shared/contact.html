@@ -1,0 +1,33 @@
+<section class="contact-area">
+    <div class="container">
+        <div class="row spacer-x">
+            <div class="col-12">
+                <div class="contact-inner">
+                    <div class="contact-left">
+                        <h3>{{.title}}</h3>
+                        <p>{{.short | safeHTML }}</p>
+                    </div><!-- /.contact-left -->
+                    <div class="contact-form">
+                        <form action="#">
+                            <div class="single-form">
+                                <input type="text" placeholder="Naam">
+                            </div><!-- /.single-form -->
+                            <div class="single-form">
+                                <input type="text" placeholder="E mailadres*">
+                            </div><!-- /.single-form -->
+                            <div class="single-form">
+                                <input type="text" placeholder="Telefoonnummer*">
+                            </div><!-- /.single-form -->
+                            <div class="textarea">
+                                <label for="#">Bericht</label>
+                                <textarea name="#" id="#" cols="30" rows="10"></textarea><!-- /# -->
+                            </div><!-- /.textarea -->
+                            <button type="submit"><span>Verstuur</span> <img src="/assets/img/themas/arrow-right.svg"
+                                    alt="icon"></button>
+                        </form>
+                    </div><!-- /.contact-form -->
+                </div><!-- /.contact-inner -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.contact-area -->
