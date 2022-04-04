@@ -7,7 +7,7 @@
 $(document).ready(function() {
     'use strict';
     // Scroll To Top
-    $('body').prepend('<div class="go-top"><span id="top"><img src="assets/img/scroll-to-top.svg" alt="top" /></span></div>');
+    $('body').prepend('<div class="go-top"><span id="top"><img src="/assets/img/scroll-to-top.svg" alt="top" /></span></div>');
 
     $(window).scroll(function() {
         if ($(window).scrollTop() > 500) {
