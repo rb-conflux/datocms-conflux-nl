@@ -71,6 +71,9 @@ module.exports = (dato, root, i18n) => {
   var pages = [ 'home', 'pageAbout', 'pageTopic', 'pageCompany', 'pageContact'];
 
   // TODO abstract path 
+
+
+
   
   pages.forEach((page, index) => {
       if (dato[page]) {
@@ -82,11 +85,7 @@ module.exports = (dato, root, i18n) => {
           title: pageData.title,
           seoMetaTags: toHtml(pageData.seoMetaTags),
           menu: { main: { weight: (index+1)*100 } },
-          url: pageData.slug,
-          domains_title: pageData.domainsTitle,
-          company_title: pageData.companiesTitle,
-          themes_title: pageData.themesTitle,
-          values_title: pageData.valuesTitle
+          slug: pageData.slug
         }
 
         addBanner(frontmatter, pageData);
@@ -94,6 +93,7 @@ module.exports = (dato, root, i18n) => {
         addCompanies(frontmatter, pageData)
         addThemes(frontmatter, pageData)
         addContact(frontmatter, pageData)
+
 
 
         root.createPost('content/' + filename, 'yaml', {
@@ -171,7 +171,7 @@ function addThemes(frontmatter, pageData) {
     }    
   }
 }
-
+// TODO render dast
 function addContact(frontmatter, pageData) {
   if (pageData && pageData.contact && pageData.contact.length > 0) {
     var contactData = pageData.contact[0];
@@ -183,8 +183,6 @@ function addContact(frontmatter, pageData) {
     }
   }
 }  
-
-
 
 
 
