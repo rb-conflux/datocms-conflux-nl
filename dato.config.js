@@ -194,7 +194,6 @@ function addValues(frontmatter, pageData) {
     frontmatter.values = {
       title: pageData.valuesTitle,
       items: pageData.values.map((item, index) => { 
-        console.log(item.icon)
         return {
         title: item.title,
         short: item.short,
