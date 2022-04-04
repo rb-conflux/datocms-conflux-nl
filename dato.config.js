@@ -1,4 +1,5 @@
 const htmlTag = require('html-tag');
+const render = require('datocms-structured-text-to-html-string');
 
 // This function helps transforming structures like:
 //
@@ -179,7 +180,7 @@ function addContact(frontmatter, pageData) {
     console.dir(contactData.short)
     frontmatter.contact = {
       title: contactData.title,
-      short: contactData.short.value,
+      short: render.render(contactData.short),
     }
   }
 }  
