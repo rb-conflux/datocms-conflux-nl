@@ -36,7 +36,7 @@ const toHtml = (tags) => {
 
 module.exports = (dato, root, i18n) => {
 
-  var pages = [ 'home', 'pageAbout', 'pageTheme', 'pageCompany', 'pageContact'];
+  var pages = ['home', 'pageAbout', 'pageTheme', 'pageCompany', 'pageContact'];
 
   // Add to the existing Hugo config files some properties coming from data
   // stored on DatoCMS
@@ -62,211 +62,209 @@ module.exports = (dato, root, i18n) => {
     faviconMetaTags: toHtml(dato.site.faviconMetaTags),
     seoMetaTags: toHtml(dato.home.seoMetaTags)
 
-   
-  });
 
+  });
 
   var siteData = dato.site.toMap()
 
- 
-
-  // TODO abstract path 
-
-
-
-  
   pages.forEach((page, index) => {
-      if (dato[page]) {
-        var pageData = dato[page];
-        
-        var filename = (page == "home" ? '_index.md' : pageData.slug + '/index.md');
+    if (dato[page]) {
+      var pageData = dato[page];
 
-        var frontmatter ={
-          type: page,
-          title: pageData.title,
-          seoMetaTags: toHtml(pageData.seoMetaTags),
-          menu: {
-            main: {
-              weight: (index+1)*100
-            }
+      var filename = (page == "home" ? '_index.md' : pageData.slug + '/index.md');
+
+      var frontmatter = {
+        type: page,
+        title: pageData.title,
+        seoMetaTags: toHtml(pageData.seoMetaTags),
+        menu: {
+          main: {
+            weight: (index + 1) * 100
           }
         }
-
-        addBanner(frontmatter, pageData);
-        addDomains(frontmatter, pageData);
-        addCompanies(frontmatter, pageData)
-        addThemes(frontmatter, pageData);
-        addContact(frontmatter, pageData);
-        addValues(frontmatter, pageData);
-
-        addBlock(frontmatter, pageData, 'addedValue');
-        addBlock(frontmatter, pageData, 'contactBlock');
-
-
-        addFooterData(frontmatter, dato)
-
-
-
-        root.createPost('content/' + filename, 'yaml', {
-          frontmatter: frontmatter
-        });
-        
-        
-
-
       }
+
+      addBanner(frontmatter, pageData);
+      addDomains(frontmatter, pageData);
+      addCompanies(frontmatter, pageData)
+      addThemes(frontmatter, pageData);
+      addContact(frontmatter, pageData);
+      addValues(frontmatter, pageData);
+
+      addBlock(frontmatter, pageData, 'addedValue');
+      addBlock(frontmatter, pageData, 'contactBlock');
+
+
+      addFooterData(frontmatter, dato)
+
+
+
+      root.createPost('content/' + filename, 'yaml', {
+        frontmatter: frontmatter
+      });
+
+
+
+
+    }
   });
 
-  
-function addBanner(frontmatter, pageData) {
-  if (pageData && pageData.header && pageData.header.length > 0  ) {
-    var headerData = pageData.header[0];
-    frontmatter.banner = {
-      title: headerData.title,
-      short: headerData.short,
-      link: headerData.link,
-      dark: headerData.dark,
-      image: createImage(headerData.image, 544, 634, 'png')
+  function addBanner(frontmatter, pageData) {
+    if (pageData && pageData.header && pageData.header.length > 0) {
+      var headerData = pageData.header[0];
+      frontmatter.banner = {
+        title: headerData.title,
+        short: headerData.short,
+        link: headerData.link,
+        dark: headerData.dark,
+        image: createImage(headerData.image, 544, 634, 'png')
+      }
     }
   }
-}  
 
-function addDomains(frontmatter, pageData) {
-  if(pageData.domains) {
-    frontmatter.domains = {
-      title: pageData.domainsTitle,
-      items: pageData.domains.map((item, index) => { return {
-        title: item.title,
-        short: dastRenderer.render(item.short),
-        icon: {
-          src: item.icon.url({ w: 60, h: 60, fm: 'svg' }),
-          alt: item.icon.alt
-        },
-        weight: index,
-        even: (index % 2 == 0)
-      }})
-    }    
-  }
-}
-
-function addCompanies(frontmatter, pageData) {
-  if (pageData.companies) {
-    frontmatter.companies = {
-      title:pageData.companiesTitle,
-      short:pageData.companiesShort,
-      items: pageData.companies.map((item, index) => {
-        return {
-          name: item.name,
-          short: item.short,
-          long: item.long,
-          url_website: item.url_website,
-          url_jobs: item.url_jobs,
-          url_cases: item.url_cases,
-          weight: index,
-          even: (index % 2 == 0)
-        }
-      })
+  function addDomains(frontmatter, pageData) {
+    if (pageData.domains) {
+      frontmatter.domains = {
+        title: pageData.domainsTitle,
+        items: pageData.domains.map((item, index) => {
+          return {
+            title: item.title,
+            short: dastRenderer.render(item.short),
+            icon: {
+              src: item.icon.url({ w: 60, h: 60, fm: 'svg' }),
+              alt: item.icon.alt
+            },
+            weight: index,
+            even: (index % 2 == 0)
+          }
+        })
+      }
     }
   }
-}
 
-function createIcon(icon) {
-  if (icon) {
-    return {
-      src: icon.url({ w: 60, h: 60, fm: 'svg' }),
-      alt: icon.alt
+  function addCompanies(frontmatter, pageData) {
+    if (pageData.companies) {
+      frontmatter.companies = {
+        title: pageData.companiesTitle,
+        short: pageData.companiesShort,
+        items: pageData.companies.map((item, index) => {
+          return {
+            name: item.name,
+            short: item.short,
+            long: item.long,
+            url_website: item.url_website,
+            url_jobs: item.url_jobs,
+            url_cases: item.url_cases,
+            weight: index,
+            even: (index % 2 == 0)
+          }
+        })
+      }
     }
   }
-}
 
-function createImage(image, width, height, format) {
-  if (image) {
-    return {
-      src: image.url({ w: width, h: height, fm: format }),
-      alt: image.alt
+  function createIcon(icon) {
+    if (icon) {
+      return {
+        src: icon.url({ w: 60, h: 60, fm: 'svg' }),
+        alt: icon.alt
+      }
     }
   }
-}
 
-function addThemes(frontmatter, pageData) {
-  if(pageData.themes) {
-    frontmatter.themes = {
-      title: pageData.themesTitle,
-      items: pageData.themes.map((item, index) => { return {
-        title: item.title,
-        short: item.short,
-        long: item.long,
-        icon: createIcon(item.icon),
-        image: item.image,
-        weight: index,
-        even: (index % 2 == 0)
-      }})
-    }    
-  }
-
-}
-
-
-function addValues(frontmatter, pageData) {
-  if(pageData.values) {
-    frontmatter.values = {
-      title: pageData.valuesTitle,
-      items: pageData.values.map((item, index) => { 
-        return {
-        title: item.title,
-        short: dastRenderer.render(item.short),
-        icon:  createIcon(item.icon),
-        weight: index,
-        even: (index % 2 == 0)
-      }})
-    }    
-  }
-}
-
-function addBlock(frontmatter, pageData, field) {
-  if (pageData[field] && pageData[field].length > 0) {
-    frontmatter[field] = {
-      title: pageData[field][0].title,
-      short: dastRenderer.render(pageData[field][0].short),
-      image: pageData[field][0].image
-    };
-
-  }
-}
-
-
-function addContact(frontmatter, pageData) {
-  if (pageData && pageData.contact && pageData.contact.length > 0) {
-    var contactData = pageData.contact[0];
-    frontmatter.contact = {
-      title: contactData.title,
-      short: dastRenderer.render(contactData.short),
+  function createImage(image, width, height, format) {
+    if (image) {
+      return {
+        src: image.url({ w: width, h: height, fm: format }),
+        alt: image.alt
+      }
     }
   }
-}  
 
-function addFooterData(frontmatter, dato) {
-  frontmatter.footer = {
-    companies: {
-      title: dato.home.companiesTitle,
-      items: dato.home.companies.map((company, index) => {
-        return { 
-          name: company.name, 
-          url: company.website_url,
-          weight: (index+1) * 100 
-        }
-      })
-    },
-    themes: {
-      title: dato.home.themesTitle,
-      items: dato.home.themes.map((item, index) => { return {
-        title: item.title,
-        url: dato.pageTheme.slug + '#' + item.slug,
-        weight: (index+1) * 100 
-      }})
+  function addThemes(frontmatter, pageData) {
+    if (pageData.themes) {
+      frontmatter.themes = {
+        title: pageData.themesTitle,
+        items: pageData.themes.map((item, index) => {
+          return {
+            title: item.title,
+            short: item.short,
+            long: item.long,
+            icon: createIcon(item.icon),
+            image: item.image,
+            weight: index,
+            even: (index % 2 == 0)
+          }
+        })
+      }
+    }
+
+  }
+
+
+  function addValues(frontmatter, pageData) {
+    if (pageData.values) {
+      frontmatter.values = {
+        title: pageData.valuesTitle,
+        items: pageData.values.map((item, index) => {
+          return {
+            title: item.title,
+            short: dastRenderer.render(item.short),
+            icon: createIcon(item.icon),
+            weight: index,
+            even: (index % 2 == 0)
+          }
+        })
+      }
     }
   }
-}
+
+  function addBlock(frontmatter, pageData, field) {
+    if (pageData[field] && pageData[field].length > 0) {
+      frontmatter[field] = {
+        title: pageData[field][0].title,
+        short: dastRenderer.render(pageData[field][0].short),
+        image: createImage(pageData[field][0].image, 500, 500, 'png')
+      };
+
+    }
+  }
+
+
+  function addContact(frontmatter, pageData) {
+    if (pageData && pageData.contact && pageData.contact.length > 0) {
+      var contactData = pageData.contact[0];
+      frontmatter.contact = {
+        title: contactData.title,
+        short: dastRenderer.render(contactData.short),
+      }
+    }
+  }
+
+  function addFooterData(frontmatter, dato) {
+    frontmatter.footer = {
+      companies: {
+        title: dato.home.companiesTitle,
+        items: dato.home.companies.map((company, index) => {
+          return {
+            name: company.name,
+            url: company.website_url,
+            weight: (index + 1) * 100
+          }
+        })
+      },
+      themes: {
+        title: dato.home.themesTitle,
+        items: dato.home.themes.map((item, index) => {
+          return {
+            title: item.title,
+            url: dato.pageTheme.slug + '#' + item.slug,
+            weight: (index + 1) * 100
+          }
+        })
+      }
+    }
+  }
 };
 
 
