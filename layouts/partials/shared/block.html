@@ -10,7 +10,7 @@
                     <div class="content-inner content-2 content-1 inner-container">
                         <div class="content-img">
                             {{if .image}}
-                            <img src="/assets/img/1.png" alt="img">
+                            <img src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}">
                             {{end}}
                         </div><!-- /.content-img -->
                         <div class="content-text title">

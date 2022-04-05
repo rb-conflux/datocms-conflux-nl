@@ -17,7 +17,9 @@
                             {{ if .even }}
                             <div class="config-single">
                                 <div class="config-icon">
-                                    <img src="/assets/img/home/1.svg" alt="icon">
+                                    {{ if .logo}}
+                                    <img src="{{.logo.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
+                                    {{end}}
                                 </div><!-- /.config-icon -->
                                 <div class="config-text">
                                     <p><b>{{.name}}</b> - {{.short}}</p>
@@ -31,7 +33,9 @@
                             {{ if not .even }}
                             <div class="config-single">
                                 <div class="config-icon">
-                                    <img src="/assets/img/home/1.svg" alt="icon">
+                                    {{ if .logo}}
+                                    <img src="{{.logo.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
+                                    {{end}}
                                 </div><!-- /.config-icon -->
                                 <div class="config-text">
                                     <p><b>{{.name}}</b> - {{.short}}</p>

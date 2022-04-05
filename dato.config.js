@@ -173,6 +173,7 @@ function addCompanies(frontmatter, pageData) {
           url_website: item.urlWebsite,
           url_jobs: item.urlJobs,
           url_cases: item.urlCases,
+          logo: createImage(item.logo, 84 ,101, "png"),
           weight: index,
           even: (index % 2 == 0)
         }
