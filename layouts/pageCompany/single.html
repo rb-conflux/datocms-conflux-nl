@@ -13,7 +13,9 @@
                 <div class="single-service">
                     <div class="service-inner">
                         <div class="service-icon bg-green">
-                            <img src="/assets/img/bedrijven/jDriven.svg" alt="icon">
+                            {{ if .logo_color}}
+                            <img src="{{.logo_color.src}}" alt="{{.logo_color.alt}}" title="{{.logo_color.title}}">
+                            {{end}}
                         </div><!-- /.service-icon -->
                         <div class="service-text">
                             <h3>{{.name}}</h3>

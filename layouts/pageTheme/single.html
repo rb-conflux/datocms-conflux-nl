@@ -12,7 +12,9 @@
             <div class="col-12">
                 <div class="content-inner">
                     <div class="content-img">
-                        <img src="/assets/img/1.png" alt="img">
+                        {{if .image}}
+                        <img src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}" width="500" height="500">
+                        {{end}}
                     </div><!-- /.content-img -->
                     <div class="content-text">
                         {{if .icon}}
@@ -38,7 +40,9 @@
                     </div><!-- /.style -->
                     <div class="content-inner content-2 self-serve inner-container">
                         <div class="content-img">
-                            <img src="/assets/img/1.png" alt="img">
+                            {{if .image}}
+                            <img src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}" width="500" height="500">
+                            {{end}}
                         </div><!-- /.content-img -->
                         <div class="content-text">
                             <img src="/assets/img/themas/Like.svg" alt="icon">
