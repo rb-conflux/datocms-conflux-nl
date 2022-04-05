@@ -141,25 +141,25 @@ module.exports = (dato, root, i18n) => {
       }
     }
   }
+}
 
-  function addCompanies(frontmatter, pageData) {
-    if (pageData.companies) {
-      frontmatter.companies = {
-        title: pageData.companiesTitle,
-        short: pageData.companiesShort,
-        items: pageData.companies.map((item, index) => {
-          return {
-            name: item.name,
-            short: item.short,
-            long: item.long,
-            url_website: item.urlWebsite,
-            url_jobs: item.urlJobs,
-            url_cases: item.urlCases,
-            weight: index,
-            even: (index % 2 == 0)
-          }
-        })
-      }
+function addCompanies(frontmatter, pageData) {
+  if (pageData.companies) {
+    frontmatter.companies = {
+      title:pageData.companiesTitle,
+      short:pageData.companiesShort,
+      items: pageData.companies.map((item, index) => {
+        return {
+          name: item.name,
+          short: item.short,
+          long: item.long,
+          url_website: item.urlWebsite,
+          url_jobs: item.urlJobs,
+          url_cases: item.urlCases,
+          weight: index,
+          even: (index % 2 == 0)
+        }
+      })
     }
   }
 
