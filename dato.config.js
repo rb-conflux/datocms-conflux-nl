@@ -38,6 +38,9 @@ module.exports = (dato, root, i18n) => {
 
   var pages = ['home', 'pageAbout', 'pageTheme', 'pageCompany', 'pageContact'];
 
+  var imageType = "webp";
+  var iconType = "svg";
+
   // Add to the existing Hugo config files some properties coming from data
   // stored on DatoCMS
   ['config.dev.toml', 'config.prod.toml'].forEach(file => {
@@ -112,7 +115,7 @@ module.exports = (dato, root, i18n) => {
 function createIcon(icon) {
   if (icon) {
     return {
-      src: icon.url({ w: 60, h: 60, fm: 'svg' }),
+      src: icon.url({ w: 60, h: 60, fm: iconType }),
       alt: icon.alt
     }
   }
@@ -135,7 +138,7 @@ function addBanner(frontmatter, pageData) {
       short: headerData.short,
       link: headerData.link,
       dark: headerData.dark,
-      image: createImage(headerData.image, 544, 634, 'png')
+      image: createImage(headerData.image, 544, 634, imageType)
     }
   }
 }
@@ -149,7 +152,7 @@ function addDomains(frontmatter, pageData) {
           title: item.title,
           short: dastRenderer.render(item.short),
           icon: {
-            src: item.icon.url({ w: 60, h: 60, fm: 'svg' }),
+            src: createIcon(item.icon),
             alt: item.icon.alt
           },
           weight: index,
@@ -173,7 +176,8 @@ function addCompanies(frontmatter, pageData) {
           url_website: item.urlWebsite,
           url_jobs: item.urlJobs,
           url_cases: item.urlCases,
-          logo: createImage(item.logo, 84 ,101, "png"),
+          logo: createImage(item.logo, 84 ,101, imageType),
+          logo_color: createImage(item.logoColor, 84 ,101, imageType),
           weight: index,
           even: (index % 2 == 0)
         }
@@ -193,7 +197,7 @@ function addCompanies(frontmatter, pageData) {
             short: item.short,
             long: item.long,
             icon: createIcon(item.icon),
-            image: item.image,
+            image: createImage(item.image, 500,500, imageType),
             weight: index,
             even: (index % 2 == 0)
           }
@@ -226,7 +230,7 @@ function addCompanies(frontmatter, pageData) {
       frontmatter[field] = {
         title: pageData[field][0].title,
         short: dastRenderer.render(pageData[field][0].short),
-        image: createImage(pageData[field][0].image, 500, 500, 'png')
+        image: createImage(pageData[field][0].image, 500, 500, imageType)
       };
 
     }
