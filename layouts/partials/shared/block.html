@@ -1,5 +1,5 @@
- <!-- =================== content Area =================== -->
- <section class="content-area ">
+<!-- =================== content Area =================== -->
+<section class="content-area ">
     <div class="container container-large">
         <div class="row">
             <div class="col-12">
@@ -7,15 +7,17 @@
                     <div class="style">
                         <img src="/assets/img/home/themas-bg.svg" alt="themas-bg">
                     </div>
-                <div class="content-inner content-2 content-1 inner-container">
-                    <div class="content-img">
-                        <img src="/assets/img/1.png" alt="img">
-                    </div><!-- /.content-img -->
-                    <div class="content-text title">
-                        <h2>{{.title}}</h2>
-                        <p>{{.short | safeHTML }}</p>
-                    </div><!-- /.content-text -->
-                </div><!-- /.bg-content -->
+                    <div class="content-inner content-2 content-1 inner-container">
+                        <div class="content-img">
+                            {{if .image}}
+                            <img src="/assets/img/1.png" alt="img">
+                            {{end}}
+                        </div><!-- /.content-img -->
+                        <div class="content-text title">
+                            <h2>{{.title}}</h2>
+                            <p>{{.short | safeHTML }}</p>
+                        </div><!-- /.content-text -->
+                    </div><!-- /.bg-content -->
 
                 </div><!-- /.content-inner -->
             </div><!-- /.col-12 -->
