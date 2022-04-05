@@ -109,36 +109,53 @@ module.exports = (dato, root, i18n) => {
     }
   });
 
-  function addBanner(frontmatter, pageData) {
-    if (pageData && pageData.header && pageData.header.length > 0) {
-      var headerData = pageData.header[0];
-      frontmatter.banner = {
-        title: headerData.title,
-        short: headerData.short,
-        link: headerData.link,
-        dark: headerData.dark,
-        image: createImage(headerData.image, 544, 634, 'png')
-      }
+function createIcon(icon) {
+  if (icon) {
+    return {
+      src: icon.url({ w: 60, h: 60, fm: 'svg' }),
+      alt: icon.alt
     }
   }
+}
 
-  function addDomains(frontmatter, pageData) {
-    if (pageData.domains) {
-      frontmatter.domains = {
-        title: pageData.domainsTitle,
-        items: pageData.domains.map((item, index) => {
-          return {
-            title: item.title,
-            short: dastRenderer.render(item.short),
-            icon: {
-              src: item.icon.url({ w: 60, h: 60, fm: 'svg' }),
-              alt: item.icon.alt
-            },
-            weight: index,
-            even: (index % 2 == 0)
-          }
-        })
-      }
+function createImage(image, width, height, format) {
+  if (image) {
+    return {
+      src: image.url({ w: width, h: height, fm: format }),
+      alt: image.alt
+    }
+  }
+}
+
+function addBanner(frontmatter, pageData) {
+  if (pageData && pageData.header && pageData.header.length > 0) {
+    var headerData = pageData.header[0];
+    frontmatter.banner = {
+      title: headerData.title,
+      short: headerData.short,
+      link: headerData.link,
+      dark: headerData.dark,
+      image: createImage(headerData.image, 544, 634, 'png')
+    }
+  }
+}
+
+function addDomains(frontmatter, pageData) {
+  if (pageData.domains) {
+    frontmatter.domains = {
+      title: pageData.domainsTitle,
+      items: pageData.domains.map((item, index) => {
+        return {
+          title: item.title,
+          short: dastRenderer.render(item.short),
+          icon: {
+            src: item.icon.url({ w: 60, h: 60, fm: 'svg' }),
+            alt: item.icon.alt
+          },
+          weight: index,
+          even: (index % 2 == 0)
+        }
+      })
     }
   }
 }
@@ -162,24 +179,8 @@ function addCompanies(frontmatter, pageData) {
       })
     }
   }
+}
 
-  function createIcon(icon) {
-    if (icon) {
-      return {
-        src: icon.url({ w: 60, h: 60, fm: 'svg' }),
-        alt: icon.alt
-      }
-    }
-  }
-
-  function createImage(image, width, height, format) {
-    if (image) {
-      return {
-        src: image.url({ w: width, h: height, fm: format }),
-        alt: image.alt
-      }
-    }
-  }
 
   function addThemes(frontmatter, pageData) {
     if (pageData.themes) {
@@ -265,6 +266,7 @@ function addCompanies(frontmatter, pageData) {
       }
     }
   }
-};
+}
+
 
 
