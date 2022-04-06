@@ -8,6 +8,7 @@
 {{if .even}}
 <section class="content-area">
     <div class="container">
+        <a id="{{ urlize .title}}"></a>
         <div class="row">
             <div class="col-12">
                 <div class="content-inner">
@@ -32,6 +33,7 @@
 {{else}}
 <section class="content-area ">
     <div class="container container-large">
+        <a id="{{ urlize .title}}"></a>   
         <div class="row">
             <div class="col-12">
                 <div class="bg-content">
@@ -39,6 +41,7 @@
                         <img src="/assets/img/home/themas-bg.svg" alt="themas-bg">
                     </div><!-- /.style -->
                     <div class="content-inner content-2 self-serve inner-container">
+                      
                         <div class="content-img">
                             {{if .image}}
                             <img src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}" width="500" height="500">
