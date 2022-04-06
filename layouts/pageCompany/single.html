@@ -15,13 +15,15 @@
                     <div class="service-inner">
                         <div class="service-icon bg-green">
                             {{ if .logo_color}}
+                            <a href="{{.url_website}}" target="_blank">
                             <img src="{{.logo_color.src}}" alt="{{.logo_color.alt}}" title="{{.logo_color.title}}">
+                            </a>
                             {{end}}
                         </div><!-- /.service-icon -->
                         <div class="service-text">
                             <h3>{{.name}}</h3>
                             <p>{{.long | safeHTML}}</p>
-                            <a href="{{.url_website}}">{{replace .url_website "https://" ""}}<img
+                            <a href="{{.url_website}}" target="_blank">{{replace .url_website "https://" ""}}<img
                                     src="/assets/img/bedrijven/arrow-right.svg" alt="icon"></a>
                         </div><!-- /.service-text -->
                     </div><!-- /.service-inner -->
