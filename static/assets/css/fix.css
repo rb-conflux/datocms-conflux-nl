@@ -6,6 +6,9 @@
     text-decoration: none;
   }
 
+  .mobile-footer-area {
+      display: none;
+  }
 
 .contact-left h3::before, .title h2::before {
     background-image: linear-gradient(90deg, #00BEB0 0%, #2AB2DF 100%);
@@ -13,6 +16,10 @@
 
 .banner-text h2 {
     font-size: 2.35em;
+}
+
+.title h2 {
+    font-size: 2em;
 }
 
 .home-banner .banner-text p {
@@ -64,7 +71,7 @@
 }  
 
 @media (min-width: 768px) {
-    .companies  .odd {
+    .companies .odd {
         margin-left:50px;
     }
 }
@@ -104,9 +111,31 @@
 
 @media (max-width: 767px) {
 
+    .core-area {
+        padding-top: 60px;
+    }
+
+    .bedrijven-inner {
+        padding:20px;      
+    }
+
+ 
+
+
+
+ 
 }
 
 @media (max-width: 991px) {
+
+    .banner-text h2 {
+        font-size: 1.75em;
+    }
+
+    .title h2 {
+        font-size: 1.5em;
+      }
+
     .banner-right-img {
         display: none;
     }
@@ -121,6 +150,75 @@
     }
     .bedrijven-inner {
         min-height: 400px;
+    }
+
+    .textarea {
+        margin-top:0;
+    }
+    .contact-form button {
+        margin-top:0;
+    }
+
+    .companies .spacer-x:nth-of-type(2) {
+        margin-top: 0px;
+     }
+
+    .companies .config-right-single:nth-of-type(2) {
+        margin-top: 0px;
+    }
+
+    .companies .config-single {
+        margin-left: 20px;
+    }
+
+    .companies .odd {
+        margin-left: 0px;
+    }
+
+     
+
+    .contact-form {
+        padding: 20px 10px 40px 10px;
+    }
+
+    .core-icon {
+        float: right;
+    }
+
+    .core-title h2 {
+        margin-bottom: 20px;
+    }
+    
+    .sinngle-core {
+        margin-top: 0px;
+    }
+
+    .config-area, .contact-area {
+        padding-top: 60px;
+        padding-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .themes-single-icon {
+        float: right;
+    }
+
+    .contact-left p {
+        max-width: 100%;
+    }
+
+    .footer-area {
+        display: none;
+    }
+
+    .mobile-footer-area {
+        display: block;
+        background: #1b2430;
+        padding: 20px;
+    }
+
+    .mobile-footer-area .footer-logo {
+        margin:0;
     }
 }
 
