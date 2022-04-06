@@ -1,0 +1,39 @@
+.fix_banner_link, .fix_banner_link:hover {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #172744;
+    text-decoration: none;
+  }
+
+
+
+
+.banner-text h2 {
+    font-size: 2.35em;
+}
+
+.home-banner .banner-text p {
+    max-width: 90%;
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 991px) {
+    .banner-right-img {
+        display: none;
+    }
+}
+
+
+@media (max-width: 1199px) {
+    
+}
+@media (max-width: 1849px) {
+}
+
+@media (min-width: 1850px) {
+}
+
