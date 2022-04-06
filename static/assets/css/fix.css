@@ -49,12 +49,37 @@
     width: 100%;
 }
 
+.companies .config-right-single:first-child {
+    margin-top: 0;
+}
+.companies .config-right-single:nth-of-type(2) {
+    margin-top: 125px;
+}  
+
 @media (min-width: 768px) {
     .companies  .odd {
         margin-left:50px;
     }
 }
 
+@media (max-width: 991px) {
+.companies .config-right {
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding-left: 30px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 
 .companies .config-text {
     width: 90%;;
