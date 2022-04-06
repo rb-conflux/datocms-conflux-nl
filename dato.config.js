@@ -84,7 +84,13 @@ module.exports = (dato, root, i18n) => {
           main: {
             weight: (index + 1) * 100
           }
-        }
+        },
+        socialProfiles: dato.socialProfiles.map(profile => {
+          return {
+            type: profile.profileType.toLowerCase().replace(/ +/, '-'),
+            url: profile.url,
+          };
+        })
       }
 
       addBanner(frontmatter, pageData);
@@ -138,7 +144,13 @@ function addBanner(frontmatter, pageData) {
       short: headerData.short,
       link: headerData.link,
       dark: headerData.dark,
-      image: createImage(headerData.image, 544, 634, imageType)
+      image: createImage(headerData.image, 544, 634, imageType),
+      socialProfiles: dato.socialProfiles.map(profile => {
+        return {
+          type: profile.profileType.toLowerCase().replace(/ +/, '-'),
+          url: profile.url,
+        };
+      }),
     }
   }
 }

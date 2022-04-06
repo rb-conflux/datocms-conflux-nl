@@ -1,3 +1,5 @@
+
+
 <footer class="footer-area">
   <div class="container">
       <div class="row spacer-x">
@@ -16,8 +18,9 @@
                   </address>
                   <a href="tel:+31302272300">030 - 227 23 00</a> <br><a href="mailto:info@conflux.nl">info@conflux.nl</a>
                   <div class="footer-icon">
-                      <a href="#"><img src="/assets/img/footer/Linkedin.svg" alt="icon"></a>
-                      <a href="#"><img src="/assets/img/footer/Twitter.svg" alt="icon"></a>
+                    {{range .Params.socialProfiles}}
+                    <a href="{{.url}}"><img src="/assets/img/footer/{{.type}}.svg" alt="{{.type}} icon"></a>
+                    {{end}}
                   </div><!-- /.footer-icon -->
               </div><!-- /.contact-left -->
           </div><!-- /.col-lg-5 -->
@@ -84,6 +87,7 @@
 {{ if eq .Site.Params.env "development" }}
 <script src="http://localhost:5678/livereload.js"></script>
 {{ end }}
+
   
 <script>
 
