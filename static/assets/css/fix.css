@@ -23,6 +23,11 @@
     color: #172744;
 }
 
+
+.companies .spacer-x:nth-of-type(2) {
+    margin-top: 50px;
+}
+
 .companies .contact-left p {
     max-width: 90%;
 }
@@ -47,6 +52,8 @@
 
 .companies .config-single {
     width: 100%;
+    align-items:unset;
+    padding-top: 15px;
 }
 
 .companies .config-right-single:first-child {
