@@ -147,7 +147,7 @@
         display: none;
     }
     .home-banner .banner-text {
-        max-width: 90%;
+        max-width: 100%;
     }
     .bedrijven-inner {
         min-height: 400px;
@@ -221,6 +221,19 @@
     .mobile-footer-area .footer-logo {
         margin:0;
     }
+
+    .content-area-themes .content-img img {
+        display: none;
+    }
+
+    .content-area-themes .content-text img {
+        float:right;
+    }
+
+    .content-area-themes .content-text {
+        padding-right: 0;
+    }
+
 }
 
 

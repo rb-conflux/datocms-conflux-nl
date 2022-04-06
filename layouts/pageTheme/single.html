@@ -6,7 +6,7 @@
 
 {{range .Params.themes.items }}
 {{if .even}}
-<section class="content-area">
+<section class="content-area content-area-themes">
     <div class="container">
         <a id="{{ urlize .title}}"></a>
         <div class="row">
@@ -31,8 +31,8 @@
 </section><!-- /.content-area -->
 
 {{else}}
-<section class="content-area ">
-    <div class="container container-large">
+<section class="content-area content-area-themes">
+    <div class="container container-large ">
         <a id="{{ urlize .title}}"></a>   
         <div class="row">
             <div class="col-12">
