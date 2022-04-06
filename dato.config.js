@@ -264,7 +264,7 @@ function addCompanies(frontmatter, pageData) {
         items: dato.home.companies.map((company, index) => {
           return {
             name: company.name,
-            url: company.website_url,
+            url: company.urlWebsite,
             weight: (index + 1) * 100
           }
         })
@@ -274,7 +274,7 @@ function addCompanies(frontmatter, pageData) {
         items: dato.home.themes.map((item, index) => {
           return {
             title: item.title,
-            url: dato.pageTheme.slug + '#' + item.slug,
+            url: dato.pageTheme.slug,
             weight: (index + 1) * 100
           }
         })
