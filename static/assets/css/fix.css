@@ -68,7 +68,8 @@
 }
 .companies .config-right-single:nth-of-type(2) {
     margin-top: 125px;
-}  
+} 
+
 
 @media (min-width: 768px) {
     .companies .odd {
