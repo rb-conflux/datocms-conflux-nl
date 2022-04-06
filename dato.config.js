@@ -163,10 +163,7 @@ function addDomains(frontmatter, pageData) {
         return {
           title: item.title,
           short: dastRenderer.render(item.short),
-          icon: {
-            src: createIcon(item.icon),
-            alt: item.icon.alt
-          },
+          icon: createIcon(item.icon),
           weight: index,
           even: (index % 2 == 0)
         }
