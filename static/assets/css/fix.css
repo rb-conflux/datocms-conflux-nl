@@ -19,6 +19,10 @@
     max-width: 90%;
 }
 
+.bg-whiter .banner-btm-text p {
+    color: #172744;
+}
+
 @media (max-width: 767px) {
 
 }
@@ -26,6 +30,18 @@
 @media (max-width: 991px) {
     .banner-right-img {
         display: none;
+    }
+    .banner-btm-text {
+        display: none;
+    }
+    .banner-icon {
+        display: none;
+    }
+    .home-banner .banner-text {
+        max-width: 90%;
+    }
+    .bedrijven-inner {
+        min-height: 400px;
     }
 }
 
