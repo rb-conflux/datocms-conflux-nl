@@ -7,7 +7,7 @@
                     <div class="config-left title">
                         <h2>{{.title}}</h2>
                         <p>{{.short}}</p>
-                        <a href="/onze-bedrijven/">Ontdek meer <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                        <a href="/ons-netwerk/">Ontdek meer <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
 
                     </div><!-- /.config-inner-left -->
                     </div>
@@ -26,7 +26,9 @@
                             <div class="config-single">
                                 <div class="config-icon">
                                     {{ if .logo}}
+                                    <a href="/ons-netwerk/#{{urlize .name}}">
                                     <img src="{{.logo.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
+                                    </a>
                                     {{end}}
                                 </div><!-- /.config-icon -->
                                 <div class="config-text">
@@ -42,7 +44,9 @@
                             <div class="config-single">
                                 <div class="config-icon">
                                     {{ if .logo}}
+                                    <a href="/ons-netwerk/#{{urlize .name}}">
                                     <img src="{{.logo.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
+                                    </a>
                                     {{end}}
                                 </div><!-- /.config-icon -->
                                 <div class="config-text">
