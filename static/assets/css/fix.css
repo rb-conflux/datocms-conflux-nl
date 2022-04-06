@@ -7,7 +7,7 @@
   }
 
 
-.title h2::before {
+.contact-left h3::before, .title h2::before {
     background-image: linear-gradient(90deg, #00BEB0 0%, #2AB2DF 100%);
 }
 
@@ -21,6 +21,40 @@
 
 .bg-whiter .banner-btm-text p {
     color: #172744;
+}
+
+.companies .contact-left p {
+    max-width: 90%;
+}
+
+.companies .contact-left h3 {
+    max-width: 90%;
+}
+
+.companies .config-left {
+ max-width: 100%;
+ margin-bottom: 25px;
+}
+
+.companies .config-right {
+    max-width: 100%;  
+    padding: 0 50px; 
+}
+
+.companies .config-right-single {
+    width: 100%;
+}
+
+.companies .config-single {
+    width: 95%;
+}
+
+.companies .config-text {
+    width: 90%;;
+}
+
+.companies .config-text p {
+    max-width: 100%;;
 }
 
 @media (max-width: 767px) {
