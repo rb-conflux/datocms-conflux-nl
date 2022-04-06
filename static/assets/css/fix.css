@@ -46,8 +46,15 @@
 }
 
 .companies .config-single {
-    width: 95%;
+    width: 100%;
 }
+
+@media (min-width: 768px) {
+    .companies  .odd {
+        margin-left:50px;
+    }
+}
+
 
 .companies .config-text {
     width: 90%;;

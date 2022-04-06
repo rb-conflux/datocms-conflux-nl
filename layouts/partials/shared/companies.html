@@ -23,7 +23,7 @@
                             <!-- single -->
                             {{ range .items }}
                             {{ if .even }}
-                            <div class="config-single">
+                            <div class="config-single even">
                                 <div class="config-icon">
                                     {{ if .logo}}
                                     <a href="/ons-netwerk/#{{urlize .name}}">
@@ -38,7 +38,7 @@
                             {{end}}
                             {{end}}
                         </div><!-- /.config-right-single -->
-                        <div class="config-right-single">
+                        <div class="config-right-single odd">
                             {{ range .items }}
                             {{ if not .even }}
                             <div class="config-single">
