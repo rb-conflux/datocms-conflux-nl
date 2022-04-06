@@ -44,7 +44,7 @@
                       <h3>{{.Params.footer.companies.title}}</h3>
                       {{range .Params.footer.companies.items}}
                       <ul>
-                          <li><a href="{{.url}}">{{.name}}</a></li>
+                          <li><a target="_blank" href="{{.url}}" title="Direct naar {{.name}}">{{.name}}</a></li>
                       </ul>
                       {{end}}
                     
@@ -55,7 +55,7 @@
                       <h3>{{.Params.footer.themes.title}}</h3>
                       {{range .Params.footer.themes.items}}
                       <ul>
-                          <li><a href="{{.url}}">{{.title}}</a></li>
+                          <li><a href="{{.url}}/#{{urlize .title}}">{{.title}}</a></li>
                       </ul>
                       {{end}}
                       
