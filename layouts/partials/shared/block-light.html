@@ -9,7 +9,9 @@
                         {{end}}
                     </div><!-- /.content-img -->
                     <div class="content-text">
-                        <img src="/assets/img/contact/Bank.svg" alt="icon">
+                        {{if .icon}}
+                        <img src="{{.icon.src}}" alt="{{.icon.alt}}" title="{{.icon.title}}">
+                        {{end}}
                         <h2>{{.title}}</h2>
                         <p>{{.short | safeHTML }}</p>
                     </div><!-- /.content-text -->

@@ -242,7 +242,8 @@ function addCompanies(frontmatter, pageData) {
       frontmatter[field] = {
         title: pageData[field][0].title,
         short: dastRenderer.render(pageData[field][0].short),
-        image: createImage(pageData[field][0].image, 500, 500, imageType)
+        image: createImage(pageData[field][0].image, 500, 500, imageType),
+        icon: createIcon(pageData[field][0].icon),
       };
 
     }
