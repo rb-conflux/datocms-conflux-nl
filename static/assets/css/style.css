@@ -1830,7 +1830,12 @@ textarea {
     position: unset;
   }
   .banner-right-img {
-   display: none;
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    z-index: 10;
+    width: 280px;
+    max-width: 100%;
   }
   .banner-img {
     width: 260px;
@@ -1845,7 +1850,7 @@ textarea {
     font-size: 30px;
   }
   .bedrijven-inner.home-banner .banner-right-img {
-    display: none;
+    right: 0;
   }
   .core-title h2 {
     margin-bottom: 30px;
@@ -1924,5 +1929,11 @@ textarea {
   }
 }
 
-
+.fix_banner_link, .fix_banner_link:hover {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #172744;
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */
