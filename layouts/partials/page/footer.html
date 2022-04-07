@@ -142,7 +142,17 @@
 
   });
 </script>
-
+{{ if eq .Site.Params.env "production" }}
+<script>
+    window.Userback = window.Userback || {};
+    Userback.access_token = '34795|67109|pbNIGze2CvL74Eu1AiRPRusgG';
+    (function(d) {
+        var s = d.createElement('script');s.async = true;
+        s.src = 'https://static.userback.io/widget/v1.js';
+        (d.head || d.body).appendChild(s);
+    })(document);
+</script>
+{{end}}
 
 
 </body>
