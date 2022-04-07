@@ -97,10 +97,6 @@
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/slick.min.js"></script>
 <script src="/assets/js/main.js"></script>
-{{ if eq .Site.Params.env "development" }}
-<script src="http://localhost:5678/livereload.js"></script>
-{{ end }}
-
   
 <script>
 
@@ -142,6 +138,12 @@
 
   });
 </script>
+
+{{ if eq .Site.Params.env "development" }}
+<script src="http://localhost:5678/livereload.js"></script>
+{{ end }}
+
+
 {{ if eq .Site.Params.env "production" }}
 <script>
     window.Userback = window.Userback || {};
