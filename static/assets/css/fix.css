@@ -30,6 +30,20 @@
     color: #172744;
 }
 
+.sinngle-core.active {
+    background-color: #f5f3f0;
+}
+
+.sinngle-core.active .core-text p {
+    color: #000;
+}
+
+
+.sinngle-core.active .core-text h2 {
+
+    color: #000;
+
+}
 
 .companies .spacer-x:nth-of-type(2) {
     margin-top: 50px;
@@ -107,6 +121,10 @@
 .content-img img {
     border-radius: 8px;
     filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+.single-form input {
+    color: #FFFFFF;
 }
 
 
