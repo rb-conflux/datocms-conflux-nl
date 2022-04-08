@@ -135,7 +135,7 @@
     }
 
     .bedrijven-inner {
-        padding:20px;      
+        padding: 20px;      
     }
 
  
@@ -169,6 +169,7 @@
     }
     .bedrijven-inner {
         min-height: 400px;
+        padding:55px;
     }
 
     .textarea {
