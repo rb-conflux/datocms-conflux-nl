@@ -18,6 +18,14 @@
     font-size: 2.35em;
 }
 
+.banner-text p {
+    font-size: 0.9em;
+}
+
+.home-banner .banner-text a, .banner-text a {
+    font-size: 0.9em;
+}
+
 .title h2 {
     font-size: 2em;
 }
