@@ -18,6 +18,10 @@
     font-size: 2.35em;
 }
 
+hr {
+    color:white;
+}
+
 .banner-text p {
     font-size: 0.9em;
 }
@@ -91,6 +95,11 @@
 .companies .config-right-single:nth-of-type(2) {
     margin-top: 125px;
 } 
+
+.footer-area {
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
 
 
 @media (min-width: 768px) {
