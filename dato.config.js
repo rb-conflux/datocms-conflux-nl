@@ -130,7 +130,7 @@ function createIcon(icon) {
 function createImage(image, width, height, format) {
   if (image) {
     return {
-      src: image.url({ w: width, h: height, fm: format }),
+      src: image.url({ w: width*2, h: height*2, fm: format }),
       alt: image.alt
     }
   }
