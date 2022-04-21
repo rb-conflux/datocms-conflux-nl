@@ -10,6 +10,11 @@
       display: none;
   }
 
+
+.banner-img {
+    filter: grayscale(15%) opacity(85%);
+    -webkit-filter: grayscale(15%) opacity(85%);
+}  
 .contact-left h3::before, .title h2::before {
     background-image: linear-gradient(90deg, #00BEB0 0%, #2AB2DF 100%);
 }
