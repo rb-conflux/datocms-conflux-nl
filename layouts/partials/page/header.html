@@ -11,18 +11,8 @@
     <!-- <link rel="icon" href="favicon.png"> -->
     <!-- CSS Links -->
 
-    {{ if eq .Site.Params.env "development" }}
     <link rel="stylesheet" href="/assets/all.css">
-    {{ else }}
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/slick.min.css">
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/fix.css">
-    <!-- Modernizr JS -->
-    <script src="/assets/js/modernizr-2.8.3.min.js"></script>
-    {{ end }}
-
+    
     {{ .Site.Data.settings.faviconMetaTags | safeHTML }}
     {{ if isset .Params "seometatags" }}
       {{ .Params.seometatags | safeHTML }}
