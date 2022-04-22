@@ -88,52 +88,16 @@
 </footer>
 
 
-<!-- jQuery -->
+{{ if eq .Site.Params.env "development" }}
+<script src="/assets/main.js"></script>
+{{ else }}
 <script src="/assets/js/jquery-1.11.2.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/slick.min.js"></script>
 <script src="/assets/js/main.js"></script>
+{{ end }}
+
   
-<script>
-
-
-  $('.about-slider').slick({
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      arrows: true,
-      autoplay: false,
-      centerMode: false,
-      centerPadding: '10%',
-      infinite: true,
-      // initialSlide: 1,
-      nextArrow: $('.slick-left'),
-      prevArrow: $('.slick-right'),
-      responsive: [{
-              breakpoint: 1200,
-              settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 1,
-              },
-          },
-          {
-              breakpoint: 992,
-              settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-              },
-          },
-
-          {
-              breakpoint: 575,
-              settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-              },
-          },
-      ],
-
-  });
-</script>
 
 {{ if eq .Site.Params.env "development" }}
 <script src="http://localhost:5678/livereload.js"></script>

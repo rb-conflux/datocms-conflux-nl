@@ -1,8 +1,10 @@
+import $ from 'jquery';
+import 'bootstrap/dist/js/bootstrap.bundle';
+//import 'slick';
 
-/*
-| ==========================================================
-| Scroll To Top
-| ========================================================== */
+import '../scss/style.scss';
+
+console.log($)
 
 $(document).ready(function() {
     'use strict';
