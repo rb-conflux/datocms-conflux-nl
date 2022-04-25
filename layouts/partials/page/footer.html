@@ -1,76 +1,77 @@
 <footer class="footer-area">
-  <div class="container">
-      <div class="row spacer-x">
-          <div class="col-12">
-              <div class="footer-logo">
-                  <a href="#"><img src="/assets/img/logo-footer.png" alt="Conflux Logo" title="Conflux" width="160" height="37"></a>
-              </div><!-- /.footer-logo -->
-          </div><!-- /.col-12 -->
-      </div><!-- /.row -->
-      <div class="row spacer-x">
-          <div class="col-xl-5 col-lg-4 col-md-3">
-              <div class="footer-left">
-                  <h3>Contact</h3>
-                  <address>
-                      Coltbaan 4d <br>3439 NG Nieuwegein
-                  </address>
-                  <address>
-                    Admiraliteitsstraat 7A<br>3063 EJ Rotterdam
-                </address>
-                  <a href="tel:+31302272300">030 - 227 23 00</a> <br><a href="mailto:info@conflux.nl">info@conflux.nl</a>
-                  <div class="footer-icon">
-                    {{range .Params.socialProfiles}}
-                    <a href="{{.url}}"><img src="/assets/img/footer/{{.type}}.svg" alt="{{.type}} icon"></a>
-                    {{end}}
-                  </div><!-- /.footer-icon -->
-              </div><!-- /.contact-left -->
-          </div><!-- /.col-lg-5 -->
-          <div class="col-xl-7 col-lg-8 col-md-9">
-              <div class="footer-right">
-               
-                <li class="nav-item">
-                </li>
-           
-                  <div class="footer-single">
-                      <h3>Links</h3>
-                      {{ $currentNode := . }}
-                      {{ range .Site.Menus.main }}
-                      <ul>
-                          <li><a href="{{.URL}}">{{.Name}}</a></li>
-                      </ul>
-                     {{end}}
-                  </div><!-- /.footer-single -->
-                  {{ if .Params.footer.companies }}
-                  <div class="footer-single">
-                      <h3>{{.Params.footer.companies.title}}</h3>
-                      {{range .Params.footer.companies.items}}
-                      <ul>
-                          <li><a target="_blank" href="{{.url}}" title="Direct naar {{.name}}">{{.name}}</a></li>
-                      </ul>
-                      {{end}}
-                    
-                  </div><!-- /.footer-single -->
-                  {{end}}
-                  {{ if .Params.footer.themes }}
-                  <div class="footer-single">
-                      <h3>{{.Params.footer.themes.title}}</h3>
-                      {{range .Params.footer.themes.items}}
-                      <ul>
-                          <li><a href="/{{.url}}/#{{urlize .title}}">{{.title}}</a></li>
-                      </ul>
-                      {{end}}
-                      
-                  </div><!-- /.footer-single -->
-                  {{end}}
-              </div><!-- /.footer-right -->
+    <div class="container">
+        <div class="row spacer-x">
+            <div class="col-12">
+                <div class="footer-logo">
+                    <a href="#"><img src="/assets/img/logo-footer.png" alt="Conflux Logo" title="Conflux" width="160"
+                            height="37"></a>
+                </div><!-- /.footer-logo -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+        <div class="row spacer-x">
+            <div class="col-xl-5 col-lg-4 col-md-3">
+                <div class="footer-left">
+                    <h3>Contact</h3>
+                    <address>
+                        Coltbaan 4d <br>3439 NG Nieuwegein
+                    </address>
+                    <address>
+                        Admiraliteitsstraat 7A<br>3063 EJ Rotterdam
+                    </address>
+                    <a href="tel:+31302272300">030 - 227 23 00</a> <br><a
+                        href="mailto:info@conflux.nl">info@conflux.nl</a>
+                    <div class="footer-icon">
+                        {{range .Params.socialProfiles}}
+                        <a href="{{.url}}"><img src="/assets/img/footer/{{.type}}.svg" alt="{{.type}} icon"></a>
+                        {{end}}
+                    </div><!-- /.footer-icon -->
+                </div><!-- /.contact-left -->
+            </div><!-- /.col-lg-5 -->
+            <div class="col-xl-7 col-lg-8 col-md-9">
+                <div class="footer-right">
 
-          </div><!-- /.col-lg-7 -->
-      </div><!-- /.row -->
-  </div><!-- /.container -->
-  <div class="footer-bg">
-      <img src="/assets/img/footer-big.png" alt="footer-bg" class="footer-big">
-      <img src="/assets/img/footer-bg.png" alt="footer-bg" class="footer-smaller">
-  </div><!-- /.footer-bg -->
+
+
+                    <div class="footer-single">
+                        <h3>Links</h3>
+                        {{ $currentNode := . }}
+                        {{ range .Site.Menus.main }}
+                        <ul>
+                            <li><a href="{{.URL}}">{{.Name}}</a></li>
+                        </ul>
+                        {{end}}
+                    </div><!-- /.footer-single -->
+                    {{ if .Params.footer.companies }}
+                    <div class="footer-single">
+                        <h3>{{.Params.footer.companies.title}}</h3>
+                        {{range .Params.footer.companies.items}}
+                        <ul>
+                            <li><a target="_blank" href="{{.url}}" title="Direct naar {{.name}}">{{.name}}</a></li>
+                        </ul>
+                        {{end}}
+
+                    </div><!-- /.footer-single -->
+                    {{end}}
+                    {{ if .Params.footer.themes }}
+                    <div class="footer-single">
+                        <h3>{{.Params.footer.themes.title}}</h3>
+                        {{range .Params.footer.themes.items}}
+                        <ul>
+                            <li><a href="/{{.url}}/#{{urlize .title}}">{{.title}}</a></li>
+                        </ul>
+                        {{end}}
+
+                    </div><!-- /.footer-single -->
+                    {{end}}
+                </div><!-- /.footer-right -->
+
+            </div><!-- /.col-lg-7 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+    <div class="footer-bg">
+        <img src="/assets/img/footer-big.png" alt="footer-bg" class="footer-big">
+        <img src="/assets/img/footer-bg.png" alt="footer-bg" class="footer-smaller">
+    </div><!-- /.footer-bg -->
 </footer><!-- /.footer-area -->
 
 <footer class="mobile-footer-area">
@@ -78,7 +79,8 @@
         <div class="row spacer-x">
             <div class="col-12">
                 <div class="footer-logo">
-                    <a href="#"><img src="/assets/img/logo-footer.png" alt="Conflux Logo" title="Conflux" width="160" height="37"></a>
+                    <a href="#"><img src="/assets/img/logo-footer.png" alt="Conflux Logo" title="Conflux" width="160"
+                            height="37"></a>
                 </div><!-- /.footer-logo -->
             </div><!-- /.col-12 -->
         </div><!-- /.row -->
@@ -96,8 +98,8 @@
 <script>
     window.Userback = window.Userback || {};
     Userback.access_token = '34795|67109|pbNIGze2CvL74Eu1AiRPRusgG';
-    (function(d) {
-        var s = d.createElement('script');s.async = true;
+    (function (d) {
+        var s = d.createElement('script'); s.async = true;
         s.src = 'https://static.userback.io/widget/v1.js';
         (d.head || d.body).appendChild(s);
     })(document);

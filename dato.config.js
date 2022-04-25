@@ -38,7 +38,7 @@ module.exports = (dato, root, i18n) => {
 
   var pages = ['home', 'pageAbout', 'pageTheme', 'pageCompany', 'pageContact'];
 
-  var imageType = "webp";
+  var imageType = "png";
   var iconType = "svg";
 
   // Add to the existing Hugo config files some properties coming from data
@@ -118,82 +118,82 @@ module.exports = (dato, root, i18n) => {
     }
   });
 
-function createIcon(icon) {
-  if (icon) {
-    return {
-      src: icon.url({ w: 60, h: 60, fm: iconType }),
-      alt: icon.alt
+  function createIcon(icon) {
+    if (icon) {
+      return {
+        src: icon.url({ w: 60, h: 60, fm: iconType }),
+        alt: icon.alt
+      }
     }
   }
-}
 
-function createImage(image, width, height, format) {
-  if (image) {
-    return {
-      src: image.url({ w: width*2, h: height*2, fm: format }),
-      alt: image.alt
+  function createImage(image, width, height, format) {
+    if (image) {
+      return {
+        src: image.url({ w: width * 2, h: height * 2, fm: format }),
+        alt: image.alt
+      }
     }
   }
-}
 
-function addBanner(frontmatter, pageData) {
-  if (pageData && pageData.header && pageData.header.length > 0) {
-    var headerData = pageData.header[0];
-    frontmatter.banner = {
-      title: headerData.title,
-      short: headerData.short,
-      link: headerData.link,
-      dark: headerData.dark,
-      image: createImage(headerData.image, 544, 634, imageType),
-      socialProfiles: dato.socialProfiles.map(profile => {
-        return {
-          type: profile.profileType.toLowerCase().replace(/ +/, '-'),
-          url: profile.url,
-        };
-      }),
+  function addBanner(frontmatter, pageData) {
+    if (pageData && pageData.header && pageData.header.length > 0) {
+      var headerData = pageData.header[0];
+      frontmatter.banner = {
+        title: headerData.title,
+        short: headerData.short,
+        link: headerData.link,
+        dark: headerData.dark,
+        image: createImage(headerData.image, 544, 634, imageType),
+        socialProfiles: dato.socialProfiles.map(profile => {
+          return {
+            type: profile.profileType.toLowerCase().replace(/ +/, '-'),
+            url: profile.url,
+          };
+        }),
+      }
     }
   }
-}
 
-function addDomains(frontmatter, pageData) {
-  if (pageData.domains) {
-    frontmatter.domains = {
-      title: pageData.domainsTitle,
-      items: pageData.domains.map((item, index) => {
-        return {
-          title: item.title,
-          short: dastRenderer.render(item.short),
-          icon: createIcon(item.icon),
-          weight: index,
-          even: (index % 2 == 0)
-        }
-      })
+  function addDomains(frontmatter, pageData) {
+    if (pageData.domains) {
+      frontmatter.domains = {
+        title: pageData.domainsTitle,
+        items: pageData.domains.map((item, index) => {
+          return {
+            title: item.title,
+            short: dastRenderer.render(item.short),
+            icon: createIcon(item.icon),
+            weight: index,
+            even: (index % 2 == 0)
+          }
+        })
+      }
     }
   }
-}
 
-function addCompanies(frontmatter, pageData) {
-  if (pageData.companies) {
-    frontmatter.companies = {
-      title:pageData.companiesTitle,
-      short:pageData.companiesShort,
-      items: pageData.companies.map((item, index) => {
-        return {
-          name: item.name,
-          short: item.short,
-          long: item.long,
-          url_website: item.urlWebsite,
-          url_jobs: item.urlJobs,
-          url_cases: item.urlCases,
-          logo: createImage(item.logo, 84 ,101, imageType),
-          logo_color: createImage(item.logoColor, 84 ,101, imageType),
-          weight: index,
-          even: (index % 2 == 0)
-        }
-      })
+  function addCompanies(frontmatter, pageData) {
+    if (pageData.companies) {
+      frontmatter.companies = {
+        title: pageData.companiesTitle,
+        short: pageData.companiesShort,
+        items: pageData.companies.map((item, index) => {
+          return {
+            name: item.name,
+            short: item.short,
+            long: item.long,
+            url_website: item.urlWebsite,
+            url_jobs: item.urlJobs,
+            url_cases: item.urlCases,
+            logo: createImage(item.logo, 168, 202, imageType),
+            logo_color: createImage(item.logoColor, 168, 202, imageType),
+            weight: index,
+            even: (index % 2 == 0)
+          }
+        })
+      }
     }
   }
-}
 
 
   function addThemes(frontmatter, pageData) {
@@ -206,7 +206,7 @@ function addCompanies(frontmatter, pageData) {
             short: item.short,
             long: item.long,
             icon: createIcon(item.icon),
-            image: createImage(item.image, 500,500, imageType),
+            image: createImage(item.image, 500, 500, imageType),
             weight: index,
             even: (index % 2 == 0)
           }
