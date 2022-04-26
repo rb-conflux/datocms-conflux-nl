@@ -138,13 +138,12 @@ hr {
 }
 
 .companies .config-text {
-    width: 90%;
-    ;
+    max-width: 100%;
 }
 
 .companies .config-text p {
     max-width: 100%;
-    ;
+    padding: 10px 20px 0 20px;
 }
 
 .content-img img {
@@ -308,4 +307,30 @@ hr {
     .config-single {
         height: 85px;
     }
+}
+
+.companies .config-single {
+    margin-left: 20px;
+    height: 120px;
+}
+
+
+.companies .config-icon {
+    position: absolute;
+    left: -40px;
+    top: -45px;
+    background-color: white;
+    max-width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+
+
+    border-radius: 5px;
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.2));
+
+
+
 }

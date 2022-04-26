@@ -1,5 +1,5 @@
-  <!-- =================== config Area =================== -->
-  <section class="config-area companies">
+<!-- =================== config Area =================== -->
+<section class="config-area companies">
     <div class="container">
         <div class="row spacer-x">
             <div class="col-12">
@@ -10,14 +10,14 @@
                         <a href="/ons-netwerk/">Ontdek meer <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
 
                     </div><!-- /.config-inner-left -->
-                    </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="row spacer-x">
             <div class="col-12">
                 <div class="config-inner">
-                   
+
                     <div class="config-right">
                         <div class="config-right-single">
                             <!-- single -->
@@ -27,7 +27,7 @@
                                 <div class="config-icon">
                                     {{ if .logo}}
                                     <a href="/ons-netwerk/#{{urlize .name}}">
-                                    <img src="{{.logo.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}" width="84" height="101">
+                                        <img src="{{.logo_color.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
                                     </a>
                                     {{end}}
                                 </div><!-- /.config-icon -->
@@ -45,7 +45,7 @@
                                 <div class="config-icon">
                                     {{ if .logo}}
                                     <a href="/ons-netwerk/#{{urlize .name}}">
-                                    <img src="{{.logo.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}" width="84" height="101">
+                                        <img src="{{.logo_color.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}" />
                                     </a>
                                     {{end}}
                                 </div><!-- /.config-icon -->
