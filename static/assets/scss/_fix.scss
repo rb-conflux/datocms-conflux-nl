@@ -98,7 +98,15 @@ hr {
 .companies .config-single {
     width: 100%;
     align-items: unset;
-    padding-top: 15px;
+    padding-top: 20px;
+}
+
+.companies .config-single a {
+    font-size: 14px;
+    line-height: 2;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .companies .config-right-single:first-child {
@@ -314,7 +322,7 @@ hr {
 
 .companies .config-single {
     margin-left: 20px;
-    height: 120px;
+    height: 140px;
 }
 
 

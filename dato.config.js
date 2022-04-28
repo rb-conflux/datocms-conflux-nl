@@ -182,6 +182,7 @@ module.exports = (dato, root, i18n) => {
             name: item.name,
             short: item.short,
             long: item.long,
+            roles: item.roles,
             url_website: item.urlWebsite,
             url_jobs: item.urlJobs,
             url_cases: item.urlCases,
