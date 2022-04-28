@@ -290,7 +290,7 @@ hr {
 
         .roles {
             position: absolute;
-            bottom: 30px;
+            bottom: 10px;
             left: 0;
             padding: 0 20px 10px 20px;
 
@@ -318,6 +318,11 @@ hr {
     .config-text p {
         max-width: 100%;
         padding: 0;
+        padding-bottom: 1rem;
+    }
+
+    .config-text p:empty {
+        padding-bottom: 0;
     }
 
 
@@ -394,7 +399,7 @@ hr {
 .companies-page {
     .config-single {
         margin-left: 20px;
-        height: 280px;
+        height: 300px;
     }
 
     .urls {
