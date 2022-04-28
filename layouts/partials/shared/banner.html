@@ -22,60 +22,64 @@
                             <!-- <img class="banner-img" src="assets/img/1.png" alt="img"> -->
                             <img class="img-water" src="/assets/img/img-water.png" alt="img-water">
                         </div><!-- /.banner-right-img -->
-                        
+
                     </div><!-- /.bedrijven-inner -->
                     <div class="banner-btm-text">
                         <p>Don’t forget to follow us at:</p>
                     </div><!-- /.banner-btm-text -->
                     <div class="banner-icon">
                         {{range .socialProfiles}}
-                        <a href="{{.url}}"><img src="/assets/img/footer/{{.type}}.svg" alt="{{.type}} icon"></a>
+                        <a href="{{.url}}"><img src="/assets/img/footer/{{.type}}.svg" alt="{{.type}} icon"
+                                target="_blank"></a>
                         {{end}}
                     </div><!-- /.banner-icon -->
                 </div><!-- /.bg-content -->
             </div><!-- /.col-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
-  </section><!-- /.bedrijven-area -->
-  {{else}}
- <!-- =================== bedrijven Area =================== -->
- <section class="bedrijven-area hero-area">
+</section><!-- /.bedrijven-area -->
+{{else}}
+<!-- =================== bedrijven Area =================== -->
+<section class="bedrijven-area hero-area">
     <div class="container container-large">
         <div class="row">
             <div class="col-12">
                 <div class="bg-content bg-whiter">
                     <div class="inner-container">
-                    <div class="banner-style">
-                        <!-- <img src="assets/img/banner-bg.png" alt="banner style"> -->
-                    </div>
-                    
-                    <!-- /.banner-style -->
-                <div class="bedrijven-inner">
-                    <div class="banner-text">
-                        <h2>{{ .title }}</h2>
-                        <p>{{.short}}</p>
-                        <br>
-                        {{if .link}}
-                            <a href="{{.link}}" class="fix_banner_link">Ontdek meer <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
-                        {{end}}
-                    </div><!-- /.banner-text -->
-                    <div class="banner-right-img">
-                        {{if .image}}
-                        <img class="banner-img" src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}">
-                        {{end}}
-                        <img class="img-water" src="/assets/img/img-water.png" alt="img-water">
-                    </div><!-- /.banner-right-img -->
-                </div><!-- /.bedrijven-inner -->
-                <div class="banner-btm-text">
-                    <p>Don’t forget to follow us at:</p>
-                </div><!-- /.banner-btm-text -->
-                <div class="banner-icon">
-                    {{range .socialProfiles}}
-                    <a href="{{.url}}"><img src="/assets/img/footer/{{.type}}_dark.svg" alt="{{.type}} icon"></a>
-                    {{end}}
-                </div><!-- /.banner-icon -->
-            </div><!-- /.inner-container -->
-            </div><!-- /.bg-content -->
+                        <div class="banner-style">
+                            <!-- <img src="assets/img/banner-bg.png" alt="banner style"> -->
+                        </div>
+
+                        <!-- /.banner-style -->
+                        <div class="bedrijven-inner">
+                            <div class="banner-text">
+                                <h2>{{ .title }}</h2>
+                                <p>{{.short}}</p>
+                                <br>
+                                {{if .link}}
+                                <a href="{{.link}}" class="fix_banner_link">Ontdek meer <img
+                                        src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                                {{end}}
+                            </div><!-- /.banner-text -->
+                            <div class="banner-right-img">
+                                {{if .image}}
+                                <img class="banner-img" src="{{.image.src}}" alt="{{.image.alt}}"
+                                    title="{{.image.title}}">
+                                {{end}}
+                                <img class="img-water" src="/assets/img/img-water.png" alt="img-water">
+                            </div><!-- /.banner-right-img -->
+                        </div><!-- /.bedrijven-inner -->
+                        <div class="banner-btm-text">
+                            <p>Don’t forget to follow us at:</p>
+                        </div><!-- /.banner-btm-text -->
+                        <div class="banner-icon">
+                            {{range .socialProfiles}}
+                            <a href="{{.url}}"><img src="/assets/img/footer/{{.type}}_dark.svg"
+                                    alt="{{.type}} icon"></a>
+                            {{end}}
+                        </div><!-- /.banner-icon -->
+                    </div><!-- /.inner-container -->
+                </div><!-- /.bg-content -->
             </div><!-- /.col-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
