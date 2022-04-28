@@ -186,7 +186,6 @@ module.exports = (dato, root, i18n) => {
             url_website: item.urlWebsite,
             url_jobs: item.urlJobs,
             url_cases: item.urlCases,
-            logo: createImage(item.logo, 168, 202, imageType),
             logo_color: createImage(item.logoColor, 168, 202, imageType),
             weight: index,
             even: (index % 2 == 0)

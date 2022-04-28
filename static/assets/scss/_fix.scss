@@ -396,4 +396,13 @@ hr {
         margin-left: 20px;
         height: 280px;
     }
+
+    .urls {
+        width: 100%;
+
+        .jobs,
+        .cases {
+            float: right;
+        }
+    }
 }
