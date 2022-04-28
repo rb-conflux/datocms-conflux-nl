@@ -371,3 +371,14 @@ hr {
         filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.2));
     }
 }
+
+.companies.about-us .config-icon {
+    background: none;
+    left: -61px;
+    top: -30px;
+
+    img {
+        width: 120px;
+        max-width: none;
+    }
+}
