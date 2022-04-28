@@ -22,21 +22,24 @@
     background-image: linear-gradient(90deg, #00BEB0 0%, #2AB2DF 100%);
 }
 
-.banner-text h2 {
-    font-size: 2.35em;
+.banner-text {
+    h2 {
+        font-size: 2.35em;
+    }
+
+    p {
+        font-size: 1em;
+    }
 }
 
 hr {
     color: white;
 }
 
-.banner-text p {
-    font-size: 0.9em;
-}
 
 .home-banner .banner-text a,
 .banner-text a {
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .title h2 {
@@ -44,7 +47,7 @@ hr {
 }
 
 .home-banner .banner-text p {
-    max-width: 90%;
+    max-width: 88%;
 }
 
 .bg-whiter .banner-btm-text p {
