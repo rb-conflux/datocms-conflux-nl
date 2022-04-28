@@ -275,9 +275,9 @@ hr {
         margin-top: 0;
     }
 
-    .config-right-single:nth-of-type(2) {
-        margin-top: 155px;
-    }
+    // .config-right-single:nth-of-type(2) {
+    //     margin-top: 140px;
+    // }
 
     .config-single {
         margin-left: 20px;
@@ -289,7 +289,10 @@ hr {
         padding: 10px 20px;
 
         .roles {
-            margin-top: 10px;
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            padding: 0 20px 10px 20px;
 
             p {
                 line-height: 1;
@@ -381,4 +384,28 @@ hr {
         width: 120px;
         max-width: none;
     }
+}
+
+.companies-page.config-area {
+    background: none;
+    padding-top: 20px;
+}
+
+.companies-page {
+    .config-single {
+        margin-left: 20px;
+        height: 280px;
+    }
+
+    .roles {
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        padding: 0 20px 10px 20px;
+    }
+
+    // .config-right-single:nth-of-type(2) {
+    //     margin-top: 295px;
+    // }
+
 }

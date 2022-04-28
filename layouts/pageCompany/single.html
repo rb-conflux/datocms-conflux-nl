@@ -5,39 +5,79 @@
 {{end}}
 
 
-<section class="service-area">
+<!-- =================== config Area =================== -->
+<section class="config-area companies companies-page">
     <div class="container">
         <div class="row spacer-x">
-            {{range .Params.companies.items }}
-            <div class="col-lg-4 col-md-6">
-                <a id="{{ urlize .name}}"></a>
-                <div class="single-service">
-                    <div class="service-inner">
-                        <div class="service-icon bg-green">
-                            {{ if .logo_color}}
-                            <!-- <a href="{{.url_website}}" target="_blank">
-                                <img width="150" src="{{.logo_color.src}}" alt="{{.logo_color.alt}}"
-                                    title="{{.logo_color.title}}">
-                            </a> -->
+            <div class="col-12">
+                <div class="config-inner">
+                    <div class="config-right">
+                        <div class="config-right-single">
+                            <!-- single -->
+                            {{ range .Params.companies.items }}
+                            {{ if .even }}
+                            <a id="{{urlize .name}}"></a>
+                            <div class="config-single even">
+                                <div class="config-icon">
+                                    {{ if .logo}}
+                                    <a href="{{.url_website}}" target="_blank" title="{{.name}}">
+                                        <img src="{{.logo_color.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
+                                    </a>
+                                    {{end}}
+                                </div><!-- /.config-icon -->
+                                <div class="config-text">
+                                    <p>{{.long}}</p>
+                                    <div class="roles">
+                                        <p>
+                                            <img src="/assets/img/person.svg" alt="Rollen" title="Rollen">
+                                            {{.roles}}
+                                    </div>
+                                    </p>
+                                    <div class="urls">
+                                        <a href="{{.url_website}}" target="_blank" title="{{.name}}">
+                                            {{replace .url_website "https://" ""}}
+                                            <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                                    </div>
+                                </div><!-- /.config-text -->
+                            </div><!-- /.config-single -->
                             {{end}}
-                        </div><!-- /.service-icon -->
-                        <div class="service-text">
-                            <h3>{{.name}}</h3>
-                            <p>{{.long | safeHTML}}</p>
-                            <a href="{{.url_website}}" target="_blank">{{replace .url_website "https://" ""}}<img
-                                    src="/assets/img/bedrijven/arrow-right.svg" alt="icon"></a>
-                        </div><!-- /.service-text -->
-                    </div><!-- /.service-inner -->
-                </div><!-- /.single-service -->
-            </div><!-- /.col-lg-4 -->
-            {{end}}
+                            {{end}}
+                        </div><!-- /.config-right-single -->
+                        <div class="config-right-single odd">
+                            {{ range .Params.companies.items }}
+                            {{ if not .even }}
+                            <a id="{{urlize .name}}"></a>
+                            <div class="config-single even">
+                                <div class="config-icon">
+                                    {{ if .logo}}
+                                    <a href="{{.url_website}}" target="_blank" title="{{.name}}">
+                                        <img src="{{.logo_color.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
+                                    </a>
+                                    {{end}}
+                                </div><!-- /.config-icon -->
+                                <div class="config-text">
+                                    <p>{{.long}}</p>
+                                    <div class="roles">
+                                        <p>
+                                            <img src="/assets/img/person.svg" alt="Rollen" title="Rollen">
+                                            {{.roles}}
+                                    </div>
+                                    </p>
+                                    <div class="urls">
+                                        <a href="{{.url_website}}" target="_blank" title="{{.name}}">
+                                            {{replace .url_website "https://" ""}}
+                                            <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                                    </div>
+                                </div><!-- /.config-text -->
+                            </div><!-- /.config-single -->
+                            {{end}}
+                            {{end}}
+                        </div><!-- /.config-right-single -->
+                    </div><!-- /.config-right -->
+                </div><!-- /.config-inner -->
+            </div><!-- /.col-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
-</section><!-- /.service-area -->
-
-<!-- 
-{{if .Params.contact}}
-{{ partial "shared/contact.html" .Params.contact }}
-{{end}} -->
+</section><!-- /.config-area -->
 
 {{ partial "page/footer.html" . }}
