@@ -33,6 +33,16 @@
                                 </div><!-- /.config-icon -->
                                 <div class="config-text">
                                     <p>{{.short}}</p>
+                                    <div class="roles">
+                                        <p>
+                                            <img src="/assets/img/person.svg" alt="Rollen" title="Rollen">
+                                            {{.roles}}
+                                    </div>
+                                    </p>
+                                    <div class="urls">
+                                        <a href="/ons-netwerk/#{{urlize .name}}">Ontdek meer <img
+                                                src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                                    </div>
                                 </div><!-- /.config-text -->
                             </div><!-- /.config-single -->
                             {{end}}
@@ -45,12 +55,22 @@
                                 <div class="config-icon">
                                     {{ if .logo}}
                                     <a href="/ons-netwerk/#{{urlize .name}}">
-                                        <img src="{{.logo_color.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}" />
+                                        <img src="{{.logo_color.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
                                     </a>
                                     {{end}}
                                 </div><!-- /.config-icon -->
                                 <div class="config-text">
                                     <p>{{.short}}</p>
+                                    <div class="roles">
+                                        <p>
+                                            <img src="/assets/img/person.svg" alt="Rollen" title="Rollen">
+                                            {{.roles}}
+                                    </div>
+                                    </p>
+                                    <div class="urls">
+                                        <a href="/ons-netwerk/#{{urlize .name}}">Ontdek meer <img
+                                                src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                                    </div>
                                 </div><!-- /.config-text -->
                             </div><!-- /.config-single -->
                             {{end}}
