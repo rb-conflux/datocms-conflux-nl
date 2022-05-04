@@ -1,0 +1,12 @@
+// This mixin creates the media queries allowing for the design to be responsive on smaller screens
+@mixin respond($breakpoint) {
+  @if $breakpoint == large {
+    @media (min-width: 1001px) { @content };
+  }
+  @if $breakpoint == medium {
+    @media (max-width: 1000px) { @content };
+  }
+  @if $breakpoint == small {
+    @media (max-width: 700px) { @content };
+  }
+}
