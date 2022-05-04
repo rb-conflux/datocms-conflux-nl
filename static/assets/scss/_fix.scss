@@ -270,13 +270,19 @@ hr {
         margin-top: 0;
     }
 
-    // .config-right-single:nth-of-type(2) {
-    //     margin-top: 140px;
-    // }
+    @include respond(large) {
+        .config-right-single:nth-of-type(2) {
+            margin-top: 140px;
+        }
+    }
 
     .config-single {
         margin-left: 20px;
         height: 140px;
+
+        @include respond(small) {
+            height: 175px;
+        }
     }
 
     .config-text {
@@ -313,7 +319,7 @@ hr {
     .config-text p {
         max-width: 100%;
         padding: 0;
-        padding-bottom: 1rem;
+        padding-bottom: 1.2rem;
     }
 
     .config-text p:empty {
