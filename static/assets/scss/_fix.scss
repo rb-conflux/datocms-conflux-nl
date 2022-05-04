@@ -401,6 +401,10 @@ hr {
     .config-single {
         margin-left: 20px;
         height: 300px;
+
+        @include respond(small) {
+            height: 385px;
+        }
     }
 
     .urls {
