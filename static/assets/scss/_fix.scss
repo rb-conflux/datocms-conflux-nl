@@ -247,19 +247,6 @@ hr {
 
 @media (min-width: 1850px) {}
 
-.about-us {
-    .config-text p {}
-
-    .footer-icon {
-        margin-top: 12px;
-        padding-left: 39px;
-    }
-
-    .config-single {
-        height: 85px;
-    }
-}
-
 .companies {
 
     .spacer-x:nth-of-type(2) {
@@ -389,6 +376,23 @@ hr {
     img {
         width: 120px;
         max-width: none;
+    }
+}
+
+.about-us {
+    .config-text p {
+        font-size: 15px;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .footer-icon {
+        margin-top: 12px;
+        padding-left: 39px;
+    }
+
+    .config-single {
+        height: 120px;
     }
 }
 
