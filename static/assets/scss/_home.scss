@@ -59,7 +59,7 @@
             border-radius: 8px;
             box-shadow: 5px 5px 15px 0 $black_20;
             background-color: $color_mirage_approx;
-            padding: 90px 110px;
+            padding: 50px 110px;
             padding-top: 110px;
             position: relative;
 
@@ -85,8 +85,15 @@
     &-single {
         position: relative;
         z-index: 10;
+        padding-bottom: 20px;
+
+        @include respond(large) {
+            padding-bottom: 50px;
+        }
+
         &-text {
             max-width: 290px;
+
             h3 {
                 font-size: $medium;
                 font-weight: 600;
@@ -95,20 +102,22 @@
                 margin-top: 20px;
                 margin-bottom: 10px;
             }
-            
+
             p {
                 font-size: $base;
                 line-height: 2;
                 color: $white;
-            
             }
-            
+        }
+
+        &-link {
             a {
+                position: absolute;
+                bottom: 0;
                 font-size: $base;
                 font-weight: 600;
                 line-height: 2;
                 color: $white;
-                margin-top: 40px;
                 text-decoration: none;
                 display: inline-block;
             }
