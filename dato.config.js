@@ -50,11 +50,13 @@ module.exports = (dato, root, i18n) => {
     });
   });
 
+  var lang = dato.site.locales[0];
+
   // Create a YAML data file to store global data about the site
   root.createDataFile('data/settings.yml', 'yaml', {
     name: dato.site.globalSeo.siteName,
     description: dato.site.globalSeo.description,
-    language: dato.site.locales[0],
+    language: lang,
     // iterate over all the `social_profile` item types
     socialProfiles: dato.socialProfiles.map(profile => {
       return {
@@ -108,7 +110,7 @@ module.exports = (dato, root, i18n) => {
 
 
 
-      root.createPost('content/' + filename, 'yaml', {
+      root.createPost('content/' + lang + '/' + filename, 'yaml', {
         frontmatter: frontmatter
       });
 

@@ -8,3 +8,17 @@ Paginate = 5
 title = "Conflux"
 languageCode = "nl"
 # datocms:end
+
+
+
+[languages]
+  [languages.nl]
+    contentDir = 'content/nl'
+    languageName = 'Nederlands'
+    title = 'Nederlands'
+    weight = 2
+  [languages.en]
+    contentDir = 'content/en'
+    languageName = 'English'
+    title = 'English'
+    weight = 1
