@@ -1,6 +1,5 @@
 .env
 node_modules
-public
 content
 data
 npm-debug.log
