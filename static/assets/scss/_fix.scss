@@ -427,3 +427,14 @@ nav {
     padding: 10px;
     margin-bottom: 10px;
 }
+
+.contact  {
+    a, a:link, a:visited, a:active {
+        color: #172744;;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #2ab2df ;
+        text-decoration: underline;
+    }
+}
