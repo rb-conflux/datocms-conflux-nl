@@ -1,3 +1,4 @@
+{{ $onsNetwerk := "ons-netwerk" }}
 <!-- =================== config Area =================== -->
 <section class="config-area companies">
     <div class="container">
@@ -7,12 +8,14 @@
                     <div class="config-left title">
                         <h2>{{.title}}</h2>
                         <p>{{.short}}</p>
-                        <a href="/ons-netwerk/">Ontdek meer <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                        <a href="{{ $onsNetwerk | absLangURL }}">Ontdek meer <img src="/assets/img/arrow-right.svg"
+                                alt="arrow"></a>
 
                     </div><!-- /.config-inner-left -->
                 </div>
             </div>
         </div>
+
 
         <div class="row spacer-x">
             <div class="col-12">
@@ -26,7 +29,7 @@
                             <div class="config-single even">
                                 <div class="config-icon">
                                     {{ if .logo_color}}
-                                    <a href="/ons-netwerk/#{{urlize .name}}">
+                                    <a href="{{ $onsNetwerk | absLangURL }}#{{urlize .name}}">
                                         <img src="{{.logo_color.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
                                     </a>
                                     {{end}}
@@ -40,7 +43,7 @@
                                     </div>
                                     </p>
                                     <div class="urls">
-                                        <a href="/ons-netwerk/#{{urlize .name}}">Ontdek meer <img
+                                        <a href="{{ $onsNetwerk | absLangURL }}#{{urlize .name}}">Ontdek meer <img
                                                 src="/assets/img/arrow-right.svg" alt="arrow"></a>
                                     </div>
                                 </div><!-- /.config-text -->
@@ -53,8 +56,8 @@
                             {{ if not .even }}
                             <div class="config-single">
                                 <div class="config-icon">
-                                    {{ if .logo_color}}
-                                    <a href="/ons-netwerk/#{{urlize .name}}">
+                                    {{ if .logo_color }}
+                                    <a href="{{ $onsNetwerk | absLangURL }}#{{urlize .name}}">
                                         <img src="{{.logo_color.src}}" alt="{{.logo.alt}}" title="{{.logo.title}}">
                                     </a>
                                     {{end}}
@@ -68,8 +71,8 @@
                                     </div>
                                     </p>
                                     <div class="urls">
-                                        <a href="/ons-netwerk/#{{urlize .name}}">Ontdek meer <img
-                                                src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                                        <a href="{{ $onsNetwerk | absLangURL }}#{{urlize .name}}">Ontdek meer
+                                            <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
                                     </div>
                                 </div><!-- /.config-text -->
                             </div><!-- /.config-single -->
