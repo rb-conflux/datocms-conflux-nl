@@ -62,7 +62,7 @@
                         <h3>{{.Params.footer.themes.title}}</h3>
                         {{range .Params.footer.themes.items}}
                         <ul>
-                            <li><a href="/{{.url}}/#{{urlize .title}}">{{.title}}</a></li>
+                            <li><a href="{{ .url | relLangURL}}/#{{urlize .title}}">{{.title}}</a></li>
                         </ul>
                         {{end}}
 

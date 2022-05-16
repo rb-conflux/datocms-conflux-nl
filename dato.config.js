@@ -41,18 +41,20 @@ module.exports = (dato, root, i18n) => {
   var imageType = "png";
   var iconType = "svg";
 
+  var lang = dato.site.locales[0];
+
   // Add to the existing Hugo config files some properties coming from data
   // stored on DatoCMS
   ['config.dev.toml', 'config.prod.toml'].forEach(file => {
     root.addToDataFile(file, 'toml', {
       title: dato.site.globalSeo.siteName,
       languageCode: i18n.locale,
-      defaultContentLang: 'nl'
+      defaultContentLang: lang,
     });
   });
 
-  var lang = dato.site.locales[0];
-  console.log(lang)
+  
+
 
   // Create a YAML data file to store global data about the site
   root.createDataFile('data/settings.yml', 'yaml', {
@@ -277,7 +279,7 @@ module.exports = (dato, root, i18n) => {
         items: dato.home.themes.map((item, index) => {
           return {
             title: item.title,
-            url: dato.pageTheme.slug,
+            url: '/' + dato.pageTheme.slug,
             weight: (index + 1) * 100
           }
         })
