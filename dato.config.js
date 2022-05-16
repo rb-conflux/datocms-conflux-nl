@@ -108,18 +108,11 @@ module.exports = (dato, root, i18n) => {
       addBlock(frontmatter, pageData, 'addedValue');
       addBlock(frontmatter, pageData, 'contactBlock');
 
-
       addFooterData(frontmatter, dato)
-
-
 
       root.createPost('content/' + lang + '/' + filename, 'yaml', {
         frontmatter: frontmatter
       });
-
-
-
-
     }
   });
 
@@ -287,6 +280,3 @@ module.exports = (dato, root, i18n) => {
     }
   }
 }
-
-
-

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build:hugo": "NODE_ENV=production hugo --config config.prod.toml",
+    "build:hugo": "NODE_ENV=production hugo --config config.prod.toml --minify",
     "build:assets": "NODE_ENV=production webpack -p --config webpack.config.js",
     "build:datocms": "dato dump",
     "build": "npm run build:datocms && npm run build:hugo && npm run build:assets",
