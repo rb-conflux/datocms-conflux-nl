@@ -46,11 +46,13 @@ module.exports = (dato, root, i18n) => {
   ['config.dev.toml', 'config.prod.toml'].forEach(file => {
     root.addToDataFile(file, 'toml', {
       title: dato.site.globalSeo.siteName,
-      languageCode: i18n.locale
+      languageCode: i18n.locale,
+      defaultContentLang: 'nl'
     });
   });
 
   var lang = dato.site.locales[0];
+  console.log(lang)
 
   // Create a YAML data file to store global data about the site
   root.createDataFile('data/settings.yml', 'yaml', {
@@ -70,12 +72,11 @@ module.exports = (dato, root, i18n) => {
 
   });
 
-  var siteData = dato.site.toMap()
-
   pages.forEach((page, index) => {
     if (dato[page]) {
       var pageData = dato[page];
 
+      console.log("Page: " + page)
       var filename = (page == "home" ? '_index.md' : pageData.slug + '/index.md');
 
       var frontmatter = {

@@ -9,8 +9,8 @@ Paginate = 5
 # datocms:start
 title = "Conflux"
 languageCode = "nl"
+defaultContentLang = "nl"
 # datocms:end
-
 
 
 [languages]

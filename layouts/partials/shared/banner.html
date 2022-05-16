@@ -12,7 +12,7 @@
                             <h2>{{ .title }}</h2>
                             <p>{{.short}}</p>
                             {{if .link}}
-                            <a href="{{.link}}">Ontdek meer <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
+                            <a href="{{.link | relLangURL  }}">Ontdek meer <img src="/assets/img/arrow-right.svg" alt="arrow"></a>
                             {{end}}
                         </div><!-- /.banner-text -->
                         <div class="banner-right-img">
@@ -57,7 +57,7 @@
                                 <p>{{.short}}</p>
                                 <br>
                                 {{if .link}}
-                                <a href="{{.link}}" class="fix_banner_link">Ontdek meer <img
+                                <a href="{{.link | relLangURL }}" class="fix_banner_link">Ontdek meer <img
                                         src="/assets/img/arrow-right.svg" alt="arrow"></a>
                                 {{end}}
                             </div><!-- /.banner-text -->
