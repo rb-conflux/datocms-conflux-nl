@@ -14,11 +14,6 @@
 {{end}}
 
 
-<!-- {{if .Params.contact}}
-{{ partial "shared/contact.html" .Params.contact }}
-{{end}} -->
-
-
 <section class="config-area companies about-us">
     <div class="container">
         <div class="row spacer-x">
@@ -26,7 +21,8 @@
                 <div class="config-inner">
                     <div class="config-left title">
                         <h2>Achter de schermen</h2>
-                        <p>Samen met onze collega's bouwen wij aan het Conflux netwerk. We ondersteunen vanuit het netwerk de ontwikkeling
+                        <p>Samen met onze collega's bouwen wij aan het Conflux netwerk. We ondersteunen vanuit het
+                            netwerk de ontwikkeling
                             van bedrijven in relevante niches in de IT.</p>
 
                         <p>
@@ -34,7 +30,9 @@
                             ontwikkelen van IT bedrijven helpen we onze collega's om kleinschalige IT-bedrijven
                             op te richten en uit te bouwen met elk hun eigen niche maar altijd onze collega's centraal.
                         </p>
-                        <p>Meer weten, volg ons op LinkedIn, Twitter of neem <a href="{{ "/contact/" | relLangURL }}">contact</a> met ons op.
+                        {{ $contact:= "/contact/"}}
+                        <p>Meer weten, volg ons op LinkedIn, Twitter of neem <a
+                                href="{{ $contact | relLangURL}}">contact</a> met ons op.
                         </p>
                     </div><!-- /.config-inner-left -->
                 </div>
