@@ -55,7 +55,9 @@ hr {
 }
 
 .sinngle-core.active {
-    background-color: #f5f3f0;
+    border-radius: unset;
+    box-shadow: unset;
+    background-color: unset;
 }
 
 .sinngle-core.active .core-text p {
