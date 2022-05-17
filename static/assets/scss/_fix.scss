@@ -265,7 +265,7 @@ hr {
 
     .config-single {
         margin-left: 20px;
-        height: 140px;
+        height: 160px;
 
         @include respond(small) {
             height: 175px;
@@ -404,7 +404,7 @@ hr {
 .companies-page {
     .config-single {
         margin-left: 20px;
-        height: 300px;
+        height: 400px;
 
         @include respond(small) {
             height: 385px;
@@ -428,24 +428,35 @@ nav {
     margin-bottom: 10px;
 }
 
-.contact  {
-    a, a:link, a:visited, a:active {
-        color: #172744;;
+.contact {
+
+    a,
+    a:link,
+    a:visited,
+    a:active {
+        color: #172744;
+        ;
         text-decoration: none;
     }
+
     a:hover {
-        color: #2ab2df ;
+        color: #2ab2df;
         text-decoration: underline;
     }
 }
 
-.footer-area .contact  {
-    a, a:link, a:visited, a:active {
+.footer-area .contact {
+
+    a,
+    a:link,
+    a:visited,
+    a:active {
         color: #fff;
         text-decoration: none;
     }
+
     a:hover {
-        color: #2ab2df ;
+        color: #2ab2df;
         text-decoration: underline;
     }
 }
