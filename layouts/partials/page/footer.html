@@ -34,9 +34,6 @@
             </div><!-- /.col-lg-5 -->
             <div class="col-xl-7 col-lg-8 col-md-9">
                 <div class="footer-right">
-
-
-
                     <div class="footer-single">
                         <h3>Links</h3>
                         {{ $currentNode := . }}
@@ -79,16 +76,44 @@
     </div><!-- /.footer-bg -->
 </footer><!-- /.footer-area -->
 
-<footer class="mobile-footer-area">
+<footer class="mobile-footer-area footer-area">
     <div class="container">
         <div class="row spacer-x">
-            <div class="col-12">
+            <div class="col-6">
                 <div class="footer-logo">
                     <a href="#"><img src="/assets/img/logo-footer.png" alt="Conflux Logo" title="Conflux" width="160"
                             height="37"></a>
                 </div><!-- /.footer-logo -->
             </div><!-- /.col-12 -->
         </div><!-- /.row -->
+        <div class="row spacer-x">
+            <div class="col-6">
+                <div class="contact">
+                    <a href="tel:+31302272300">030 - 227 23 00</a> <br><a
+                    href="mailto:info@conflux.nl">info@conflux.nl</a>
+                <div class="footer-icon">
+                    {{range .Params.socialProfiles}}
+                    <a href="{{.url}}" target="_blank"><img src="/assets/img/footer/{{.type}}.svg"
+                            alt="{{.type}} icon"></a>
+                    {{end}}
+                </div><!-- /.footer-icon -->
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="contact">
+                        <address>
+                            <a href="https://www.google.com/maps/dir//Coltbaan+4c,+3439+NG+Nieuwegein/@52.0314241,5.0982526,17z/" target="_blank">
+                                Coltbaan 4C <br>3439 NG Nieuwegein
+                            </a>
+                        </address>
+                        <address>
+                            <a href="https://www.google.com/maps/dir//Admiraliteitsstraat+7A,+3063+EJ+Rotterdam/@51.9224726,4.4981496,17z/" target="_blank">
+                            Admiraliteitsstraat 7A<br>3063 EJ Rotterdam
+                            </a>
+                        </address>
+                   
+                </div><!-- /.contact-left -->
+            </div><!-- /.col-lg-5 -->
     </div>
 </footer>
 
