@@ -30,8 +30,8 @@
                                 <div class="config-icon">
                                     {{ if .logo_color}}
                                     <a href="{{ $onsNetwerk | absLangURL }}#{{urlize .name}}">
-                                        <img src="{{.logo_color.src}}" width="100" alt="{{.logo.alt}}"
-                                            title="{{.logo.title}}">
+                                        <img src="{{.logo_color.src}}" width="100" alt="{{.logo_color.alt}}"
+                                            title="{{.name}}">
                                     </a>
                                     {{end}}
                                 </div><!-- /.config-icon -->
@@ -59,8 +59,8 @@
                                 <div class="config-icon">
                                     {{ if .logo_color }}
                                     <a href="{{ $onsNetwerk | absLangURL }}#{{urlize .name}}">
-                                        <img src="{{.logo_color.src}}" width="100" alt="{{.logo.alt}}"
-                                            title="{{.logo.title}}">
+                                        <img src="{{.logo_color.src}}" width="100" alt="{{.logo_color.alt}}"
+                                            title="{{.name}}">
                                     </a>
                                     {{end}}
                                 </div><!-- /.config-icon -->
