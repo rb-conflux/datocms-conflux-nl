@@ -1,1 +1,6 @@
 /   /nl 302!
+https://develop.conflux.nl/robots.txt /block_robots.txt 200!
+https://develop-conflux-nl.netlify.app/robots.txt /block_robots.txt 200!
+https://preview.conflux.nl/robots.txt /block_robots.txt 200!
+https://preview-conflux-nl.netlify.app/robots.txt /block_robots.txt 200!
+
