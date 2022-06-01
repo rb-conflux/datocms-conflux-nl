@@ -48,8 +48,10 @@ module.exports = (dato, root, i18n) => {
   ['config.dev.toml', 'config.prod.toml'].forEach(file => {
     root.addToDataFile(file, 'toml', {
       title: dato.site.globalSeo.siteName,
-      languageCode: i18n.locale,
-      defaultContentLang: lang,
+      defaultContentLanguage: "en",
+      defaultContentLang: "en",
+      defaultContenLanguageInSubdir: true,
+      disableAliases : true
     });
   });
 
@@ -60,7 +62,6 @@ module.exports = (dato, root, i18n) => {
   root.createDataFile('data/settings.yml', 'yaml', {
     name: dato.site.globalSeo.siteName,
     description: dato.site.globalSeo.description,
-    language: lang,
     // iterate over all the `social_profile` item types
     socialProfiles: dato.socialProfiles.map(profile => {
       return {
@@ -74,9 +75,14 @@ module.exports = (dato, root, i18n) => {
 
   });
 
-  pages.forEach((page, index) => {
+  dato.site.locales.forEach((locale) => {
+    pages.forEach((page, index) => {
+    i18n.locale = locale;
+
     if (dato[page]) {
       var pageData = dato[page];
+
+     
 
       console.log("Page: " + page)
       var filename = (page == "home" ? '_index.md' : pageData.slug + '/index.md');
@@ -110,11 +116,13 @@ module.exports = (dato, root, i18n) => {
 
       addFooterData(frontmatter, dato)
 
-      root.createPost('content/' + lang + '/' + filename, 'yaml', {
+      root.createPost('content/' + locale + '/' + filename, 'yaml', {
         frontmatter: frontmatter
       });
     }
   });
+
+});
 
   function createIcon(icon) {
     if (icon) {

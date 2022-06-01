@@ -1,13 +1,11 @@
 baseurl = "/"
-Paginate = 5
-
-[params]
-  env = "production"
 
 # datocms:start
 title = "Conflux"
-languageCode = "nl"
-defaultContentLang = "nl"
+defaultContentLanguage = "en"
+defaultContentLang = "en"
+defaultContenLanguageInSubdir = true
+disableAliases = true
 # datocms:end
 
 [languages]
@@ -21,3 +19,6 @@ defaultContentLang = "nl"
     languageName = 'English'
     title = 'English'
     weight = 1
+
+[params]
+  env = "production"
