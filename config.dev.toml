@@ -2,9 +2,9 @@ baseurl = "/"
 
 # datocms:start
 title = "Conflux"
-defaultContentLanguage = "en"
-defaultContentLang = "en"
-defaultContenLanguageInSubdir = true
+defaultcontentlanguage = "en"
+defaultcontentlang = "en"
+defaultcontentlanguageinsubdir = true
 disableAliases = true
 # datocms:end
 

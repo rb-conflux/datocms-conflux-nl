@@ -48,15 +48,12 @@ module.exports = (dato, root, i18n) => {
   ['config.dev.toml', 'config.prod.toml'].forEach(file => {
     root.addToDataFile(file, 'toml', {
       title: dato.site.globalSeo.siteName,
-      defaultContentLanguage: "en",
-      defaultContentLang: "en",
-      defaultContenLanguageInSubdir: true,
+      defaultcontentlanguage: "en",
+      defaultcontentlang: "en",
+      defaultcontentlanguageinsubdir: true,
       disableAliases : true
     });
   });
-
-  
-
 
   // Create a YAML data file to store global data about the site
   root.createDataFile('data/settings.yml', 'yaml', {
