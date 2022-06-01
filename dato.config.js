@@ -51,7 +51,7 @@ module.exports = (dato, root, i18n) => {
       defaultcontentlanguage: "en",
       defaultcontentlang: "en",
       defaultcontentlanguageinsubdir: true,
-      disableAliases : true
+      disableAliases: true
     });
   });
 
@@ -74,52 +74,53 @@ module.exports = (dato, root, i18n) => {
 
   dato.site.locales.forEach((locale) => {
     pages.forEach((page, index) => {
-    i18n.locale = locale;
+      i18n.locale = locale;
 
-    if (dato[page]) {
-      var pageData = dato[page];
+      if (dato[page]) {
+        var pageData = dato[page];
 
-     
 
-      console.log("Page: " + page)
-      var filename = (page == "home" ? '_index.md' : pageData.slug + '/index.md');
 
-      var frontmatter = {
-        type: page,
-        title: pageData.title,
-        seoMetaTags: toHtml(pageData.seoMetaTags),
-        menu: {
-          main: {
-            weight: (index + 1) * 100
-          }
-        },
-        socialProfiles: dato.socialProfiles.map(profile => {
-          return {
-            type: profile.profileType.toLowerCase().replace(/ +/, '-'),
-            url: profile.url,
-          };
-        })
+        console.log("Page: " + page)
+        var filename = (page == "home" ? '_index.md' : pageData.slug + '/index.md');
+
+        var frontmatter = {
+          type: page,
+          title: pageData.title,
+          seoMetaTags: toHtml(pageData.seoMetaTags),
+          menu: {
+            main: {
+              weight: (index + 1) * 100
+            }
+          },
+          socialProfiles: dato.socialProfiles.map(profile => {
+            return {
+              type: profile.profileType.toLowerCase().replace(/ +/, '-'),
+              url: profile.url,
+            };
+          })
+        }
+
+        addBanner(frontmatter, pageData);
+        addDomains(frontmatter, pageData);
+        addCompanies(frontmatter, pageData)
+        addThemes(frontmatter, pageData);
+        addContact(frontmatter, pageData);
+        addValues(frontmatter, pageData);
+        addAboutUs(frontmatter, pageData);
+
+        addBlock(frontmatter, pageData, 'addedValue');
+        addBlock(frontmatter, pageData, 'contactBlock');
+
+        addFooterData(frontmatter, dato)
+
+        root.createPost('content/' + locale + '/' + filename, 'yaml', {
+          frontmatter: frontmatter
+        });
       }
+    });
 
-      addBanner(frontmatter, pageData);
-      addDomains(frontmatter, pageData);
-      addCompanies(frontmatter, pageData)
-      addThemes(frontmatter, pageData);
-      addContact(frontmatter, pageData);
-      addValues(frontmatter, pageData);
-
-      addBlock(frontmatter, pageData, 'addedValue');
-      addBlock(frontmatter, pageData, 'contactBlock');
-
-      addFooterData(frontmatter, dato)
-
-      root.createPost('content/' + locale + '/' + filename, 'yaml', {
-        frontmatter: frontmatter
-      });
-    }
   });
-
-});
 
   function createIcon(icon) {
     if (icon) {
@@ -233,6 +234,15 @@ module.exports = (dato, root, i18n) => {
             even: (index % 2 == 0)
           }
         })
+      }
+    }
+  }
+
+  function addAboutUs(frontmatter, pageData) {
+    if (pageData.aboutUsTitle) {
+      frontmatter.aboutUs = {
+        title: pageData.aboutUsTitle,
+        content: dastRenderer.render(pageData.aboutUsContent)
       }
     }
   }

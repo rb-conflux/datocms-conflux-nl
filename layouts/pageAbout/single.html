@@ -20,16 +20,8 @@
             <div class="col-lg-6 col-md-12">
                 <div class="config-inner">
                     <div class="config-left title">
-                        <h2>Achter de schermen</h2>
-                        <p>Samen met onze collega's bouwen wij aan het Confluxnetwerk. We ondersteunen vanuit het netwerk de ontwikkeling van bedrijven in relevante niches in de IT. </p>
-
-                        <p>
-                            Op basis van een inhoudelijke achtergrond in IT en ruim 15 jaar gezamenlijke ervaring met het ontwikkelen van IT bedrijven, helpen we onze collega's om kleinschalige IT-bedrijven op te richten en uit te bouwen met elk een eigen niche. Daarbij zetten we altijd onze collega's centraal.
-                        </p>
-                        {{ $contact:= "/contact/"}}
-                        <p>Meer weten, volg ons op LinkedIn, Twitter of neem <a
-                                href="{{ $contact | relLangURL}}">contact</a> met ons op.
-                        </p>
+                        <h2>{{.Params.aboutUs.title}}</h2>
+                        {{.Params.aboutUs.content | safeHTML }}
                     </div><!-- /.config-inner-left -->
                 </div>
             </div>
