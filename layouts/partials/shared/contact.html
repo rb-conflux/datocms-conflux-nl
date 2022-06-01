@@ -10,19 +10,19 @@
                     <div class="contact-form">
                         <form name="contact" data-netlify="true" action="/bedankt/">
                             <div class="single-form">
-                                <input type="text" placeholder="Naam *" required="true">
+                                <input type="text" placeholder="{{ i18n "name"}} *" required="true">
                             </div><!-- /.single-form -->
                             <div class="single-form">
-                                <input type="email" placeholder="E-mailadres *" required="true">
+                                <input type="email" placeholder="{{ i18n "email"}} *" required="true">
                             </div><!-- /.single-form -->
                             <div class="single-form">
-                                <input type="text" placeholder="Telefoonnummer">
+                                <input type="text" placeholder="{{ i18n "phone"}}">
                             </div><!-- /.single-form -->
                             <div class="textarea">
-                                <label for="#">Bericht</label>
+                                <label for="#">{{ i18n "message"}}</label>
                                 <textarea name="#" id="#" cols="30" rows="10"></textarea><!-- /# -->
                             </div><!-- /.textarea -->
-                            <button type="submit"><span>Verstuur</span> <img src="/assets/img/themas/arrow-right.svg"
+                            <button type="submit"><span>{{ i18n "send"}}</span> <img src="/assets/img/themas/arrow-right.svg"
                                     alt="icon"></button>
                         </form>
                     </div><!-- /.contact-form -->

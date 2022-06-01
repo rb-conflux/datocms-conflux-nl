@@ -12,7 +12,7 @@
                             <h2>{{ .title }}</h2>
                             <p>{{.short}}</p>
                             {{if .link}}
-                            <a href="{{.link | relLangURL  }}">Ontdek meer <img src="/assets/img/arrow-right.svg"
+                            <a href="{{.link | relLangURL  }}">{{ i18n "more"}} <img src="/assets/img/arrow-right.svg"
                                     alt="arrow"></a>
                             {{end}}
                         </div><!-- /.banner-text -->
@@ -26,7 +26,7 @@
 
                     </div><!-- /.bedrijven-inner -->
                     <div class="banner-btm-text">
-                        <p>Vergeet ons niet te volgen:</p>
+                        <p>{{ i18n "follow"}}</p>
                     </div><!-- /.banner-btm-text -->
                     <div class="banner-icon">
                         {{range .socialProfiles}}
@@ -58,7 +58,7 @@
                                 <p>{{.short}}</p>
                                 <br>
                                 {{if .link}}
-                                <a href="{{.link | relLangURL }}" class="fix_banner_link">Ontdek meer <img
+                                <a href="{{.link | relLangURL }}" class="fix_banner_link">{{ i18n "more"}} <img
                                         src="/assets/img/arrow-right.svg" alt="arrow"></a>
                                 {{end}}
                             </div><!-- /.banner-text -->
@@ -71,7 +71,7 @@
                             </div><!-- /.banner-right-img -->
                         </div><!-- /.bedrijven-inner -->
                         <div class="banner-btm-text">
-                            <p>Vergeet ons niet te volgen:</p>
+                            <p>{{ i18n "follow"}}</p>
                         </div><!-- /.banner-btm-text -->
                         <div class="banner-icon">
                             {{range .socialProfiles}}

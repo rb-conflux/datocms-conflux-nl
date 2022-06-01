@@ -1,0 +1,22 @@
+[follow]
+    other = "Don't forget to follow us:"
+
+[more]
+    other = "Learn more"
+
+ [name]
+    other = "Name"
+
+ [email] 
+    other = "Email address"
+
+ [phone]
+    other = "Phone number"
+
+ [message]
+    other = "Message"
+
+ [send]
+    other = "Send"         
+
+    
