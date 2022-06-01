@@ -69,10 +69,16 @@
                       <a {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}class="nav-link  active-link" aria-current="page" {{else}}class="nav-link"{{end}} href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                   {{ end }}
-                  {{ range $.Site.Home.AllTranslations }}
-                  <li class="nav-item"><a href="{{ .RelPermalink }}" class="language {{ .Language }} nav-link" alt="{{ .Language.LanguageName }}" title="{{ .Language.LanguageName  }}">{{ .Language }}</a></li>
-                  {{ end }}
-
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="/assets/img/globe.svg" width="16" height="16">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      {{ range $.Site.Home.AllTranslations }}
+                      <a class="dropdown-item" href="{{ .RelPermalink }}">{{ .Language.LanguageName  }}</a>
+                      {{ end }}
+                    </div>
+                  </li>
                 </ul><!-- ./navbar-nav -->
 
             </div><!-- ./collapse -->
