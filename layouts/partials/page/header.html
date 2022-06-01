@@ -69,8 +69,12 @@
                       <a {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}class="nav-link  active-link" aria-current="page" {{else}}class="nav-link"{{end}} href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                   {{ end }}
+                  {{ range $.Site.Home.AllTranslations }}
+                  <li class="nav-item"><a href="{{ .RelPermalink }}" class="language {{ .Language }} nav-link" alt="{{ .Language.LanguageName }}" title="{{ .Language.LanguageName  }}">{{ .Language }}</a></li>
+                  {{ end }}
 
                 </ul><!-- ./navbar-nav -->
+
             </div><!-- ./collapse -->
         </div><!-- /.container -->
     </nav>
