@@ -14,7 +14,8 @@
                 <div class="content-inner">
                     <div class="content-img">
                         {{if .image}}
-                        <img src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}" width="500" height="500">
+                        <img src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}" width="500"
+                            height="500">
                         {{end}}
                     </div><!-- /.content-img -->
                     <div class="content-text">
@@ -33,7 +34,7 @@
 {{else}}
 <section class="content-area content-area-themes">
     <div class="container container-large ">
-        <a id="{{ urlize .title}}"></a>   
+        <a id="{{ urlize .title}}"></a>
         <div class="row">
             <div class="col-12">
                 <div class="bg-content">
@@ -41,14 +42,17 @@
                         <img src="/assets/img/home/themas-bg.svg" alt="themas-bg">
                     </div><!-- /.style -->
                     <div class="content-inner content-2 self-serve inner-container">
-                      
+
                         <div class="content-img">
                             {{if .image}}
-                            <img src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}" width="500" height="500">
+                            <img src="{{.image.src}}" alt="{{.image.alt}}" title="{{.image.title}}" width="500"
+                                height="500">
                             {{end}}
                         </div><!-- /.content-img -->
                         <div class="content-text">
-                            <img src="/assets/img/themas/Like.svg" alt="icon">
+                            {{if .icon}}
+                            <img src="{{.icon.src}}" alt="{{.icon.alt}}">
+                            {{end}}
                             <h2>{{.title}}</h2>
                             <p>{{.long}}</p>
                         </div><!-- /.content-text -->
@@ -67,5 +71,3 @@
 {{end}} -->
 
 {{ partial "page/footer.html" . }}
-
-

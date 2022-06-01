@@ -55,7 +55,9 @@ hr {
 }
 
 .sinngle-core.active {
-    background-color: #f5f3f0;
+    border-radius: unset;
+    box-shadow: unset;
+    background-color: unset;
 }
 
 .sinngle-core.active .core-text p {
@@ -220,6 +222,11 @@ hr {
         display: block;
         background: #1b2430;
         padding: 20px;
+
+        .footer-logo {
+            padding-bottom: 20px;
+        }
+
     }
 
     .mobile-footer-area .footer-logo {
@@ -265,10 +272,10 @@ hr {
 
     .config-single {
         margin-left: 20px;
-        height: 140px;
+        height: 160px;
 
         @include respond(small) {
-            height: 175px;
+            height: 180px;
         }
     }
 
@@ -329,7 +336,7 @@ hr {
 
     .config-right {
         max-width: 100%;
-        padding: 0 50px;
+        padding: 0 20px;
     }
 
     .config-right-single {
@@ -337,7 +344,7 @@ hr {
     }
 
     .config-single {
-        width: 100%;
+        width: 95%;
         align-items: unset;
         padding-top: 20px;
     }
@@ -404,7 +411,7 @@ hr {
 .companies-page {
     .config-single {
         margin-left: 20px;
-        height: 300px;
+        height: 320px;
 
         @include respond(small) {
             height: 385px;
@@ -428,24 +435,35 @@ nav {
     margin-bottom: 10px;
 }
 
-.contact  {
-    a, a:link, a:visited, a:active {
-        color: #172744;;
+.contact {
+
+    a,
+    a:link,
+    a:visited,
+    a:active {
+        color: #172744;
+        ;
         text-decoration: none;
     }
+
     a:hover {
-        color: #2ab2df ;
+        color: #2ab2df;
         text-decoration: underline;
     }
 }
 
-.footer-area .contact  {
-    a, a:link, a:visited, a:active {
+.footer-area .contact {
+
+    a,
+    a:link,
+    a:visited,
+    a:active {
         color: #fff;
         text-decoration: none;
     }
+
     a:hover {
-        color: #2ab2df ;
+        color: #2ab2df;
         text-decoration: underline;
     }
 }
