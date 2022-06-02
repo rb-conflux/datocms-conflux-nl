@@ -28,4 +28,11 @@
 [en]
    other = "English"
 
-    
+[address_nieuwegein]
+   other = "Coltbaan 4C <br>3439 NG Nieuwegein<br>The Netherlands"
+
+[address_rotterdam]
+   other = "Admiraliteitsstraat 7A<br>3063 EJ Rotterdam<br>The Netherlands"
+
+[phonenr]
+   other = "+31 (0)30 - 227 23 00"       

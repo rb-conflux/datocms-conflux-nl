@@ -14,15 +14,15 @@
                     <h3>Contact</h3>
                         <address>
                             <a href="https://www.google.com/maps/dir//Coltbaan+4c,+3439+NG+Nieuwegein/@52.0314241,5.0982526,17z/" target="_blank">
-                                Coltbaan 4C <br>3439 NG Nieuwegein
+                                {{ i18n "address_nieuwegein" | safeHTML}}  
                             </a>
                         </address>
                         <address>
                             <a href="https://www.google.com/maps/dir//Admiraliteitsstraat+7A,+3063+EJ+Rotterdam/@51.9224726,4.4981496,17z/" target="_blank">
-                            Admiraliteitsstraat 7A<br>3063 EJ Rotterdam
+                                {{ i18n "address_rotterdam" | safeHTML}}  
                             </a>
                         </address>
-                    <a href="tel:+31302272300">030 - 227 23 00</a> <br><a
+                    <a href="tel:+31302272300">{{ i18n "phonenr"}}</a> <br><a
                         href="mailto:info@conflux.nl">info@conflux.nl</a>
                     <div class="footer-icon">
                         {{range .Params.socialProfiles}}
@@ -89,7 +89,7 @@
         <div class="row spacer-x">
             <div class="col-6">
                 <div class="contact">
-                    <a href="tel:+31302272300">030 - 227 23 00</a> <br><a
+                    <a href="tel:+31302272300">{{ i18n "phonenr"}}</a> <br><a
                     href="mailto:info@conflux.nl">info@conflux.nl</a>
                 <div class="footer-icon">
                     {{range .Params.socialProfiles}}
@@ -103,12 +103,12 @@
                 <div class="contact">
                         <address>
                             <a href="https://www.google.com/maps/dir//Coltbaan+4c,+3439+NG+Nieuwegein/@52.0314241,5.0982526,17z/" target="_blank">
-                                Coltbaan 4C <br>3439 NG Nieuwegein
+                                {{ i18n "address_nieuwegein" | safeHTML}}
                             </a>
                         </address>
                         <address>
                             <a href="https://www.google.com/maps/dir//Admiraliteitsstraat+7A,+3063+EJ+Rotterdam/@51.9224726,4.4981496,17z/" target="_blank">
-                            Admiraliteitsstraat 7A<br>3063 EJ Rotterdam
+                                {{ i18n "address_rotterdam" | safeHTML}}    
                             </a>
                         </address>
                    
