@@ -31,7 +31,7 @@
                                 <div class="config-icon">
                                     {{ if .logo_color}}
                                     <a href="{{ $onsNetwerk | absLangURL }}#{{urlize .name}}">
-                                        <img src="{{.logo_color.src}}" width="100" alt="{{.logo_color.alt}}"
+                                        <img src="{{.logo_color.src}}" width="100" alt="Logo {{.name}}"
                                             title="{{.name}}">
                                     </a>
                                     {{end}}
@@ -40,7 +40,7 @@
                                     <p>{{.short}}</p>
                                     <div class="roles">
                                         <p>
-                                            <img src="/assets/img/person.svg" alt="Rollen" title="Rollen">
+                                            <img src="/assets/img/person.svg" alt="Icon {{.roles}}">
                                             {{.roles}}
                                     </div>
                                     </p>
@@ -60,7 +60,7 @@
                                 <div class="config-icon">
                                     {{ if .logo_color }}
                                     <a href="{{ $onsNetwerk | absLangURL }}#{{urlize .name}}">
-                                        <img src="{{.logo_color.src}}" width="100" alt="{{.logo_color.alt}}"
+                                        <img src="{{.logo_color.src}}" width="100" alt="Logo {{.name}}"
                                             title="{{.name}}">
                                     </a>
                                     {{end}}
@@ -69,7 +69,7 @@
                                     <p>{{.short}}</p>
                                     <div class="roles">
                                         <p>
-                                            <img src="/assets/img/person.svg" alt="Rollen" title="Rollen">
+                                            <img src="/assets/img/person.svg" alt="Icon {{.roles}}">
                                             {{.roles}}
                                     </div>
                                     </p>
