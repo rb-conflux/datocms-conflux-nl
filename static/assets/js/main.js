@@ -1,10 +1,7 @@
 import $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle';
-//import 'slick';
 
 import '../scss/style.scss';
-
-console.log($)
 
 $(document).ready(function() {
     'use strict';

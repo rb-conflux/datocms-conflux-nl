@@ -11,6 +11,11 @@
     display: none;
 }
 
+.mobile-language-select {
+    display: none;
+}
+
+
 
 .banner-img {
     filter: grayscale(15%);
@@ -244,6 +249,15 @@ hr {
     .content-area-themes .content-text {
         padding: 10px;
     }
+
+    .language-select {
+        display: none;
+    }
+
+    .mobile-language-select {
+        display: block;
+    }
+
 
 }
 

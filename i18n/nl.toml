@@ -1,21 +1,30 @@
 [follow]
-    other = "Vergeet ons niet te volgen:"
+   other = "Vergeet ons niet te volgen:"
 
 [more]
-    other = "Ontdek meer"
+   other = "Ontdek meer"
 
- [name]
-    other = "Naam"
+[name]
+   other = "Naam"
 
- [email] 
-    other = "E-mailadres"
+[email] 
+   other = "E-mailadres"
 
- [phone]
-    other = "Telefoonnummer"
+[phone]
+   other = "Telefoonnummer"
 
- [message]
-    other = "Bericht"
+[message]
+   other = "Bericht"
 
- [send]
-    other = "Verstuur"        
+[send]
+   other = "Verstuur"   
+
+[language]
+   other = "Selecteer taal"     
+
+[nl]
+   other = "Nederlands"
+
+[en]
+   other = "Engels"        
 

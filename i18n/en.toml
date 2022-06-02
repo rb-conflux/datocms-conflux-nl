@@ -1,22 +1,31 @@
 [follow]
-    other = "Don't forget to follow us:"
+   other = "Don't forget to follow us:"
 
 [more]
-    other = "Learn more"
+   other = "Learn more"
 
- [name]
-    other = "Name"
+[name]
+   other = "Name"
 
- [email] 
-    other = "Email address"
+[email] 
+   other = "Email address"
 
- [phone]
-    other = "Phone number"
+[phone]
+   other = "Phone number"
 
- [message]
-    other = "Message"
+[message]
+   other = "Message"
 
- [send]
-    other = "Send"         
+[send]
+   other = "Send"    
+
+[language]
+   other = "Switch language"  
+
+[nl]
+   other = "Dutch"
+
+[en]
+   other = "English"
 
     

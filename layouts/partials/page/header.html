@@ -69,15 +69,22 @@
                       <a {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}class="nav-link  active-link" aria-current="page" {{else}}class="nav-link"{{end}} href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                   {{ end }}
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <li class="nav-item dropdown language-select">
+                    <a class="nav-link dropdown-toggle" title="{{ i18n "language"}}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <img src="/assets/img/globe.svg" width="16" height="16">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <!-- <h6 class="dropdown-header">{{ i18n "language"}}</h6>
+                      <div class="dropdown-divider"></div> -->
                       {{ range $.Site.Home.AllTranslations }}
-                      <a class="dropdown-item" href="{{ .RelPermalink }}">{{ .Language.LanguageName  }}</a>
+                      <a class="dropdown-item" href="{{ .RelPermalink }}">{{ i18n .Language  }}</a>
                       {{ end }}
                     </div>
+                  </li>
+                  <li class="nav-item mobile-language-select" style="text-align: center;">
+                    <div class="dropdown-divider"></div>
+                    <div>{{ range $.Site.Home.AllTranslations }}  <a href="{{ .RelPermalink }}" class="nav-link" style="display:inline">{{ i18n .Language  }}</a> {{end }}</div>
+                    <div class="dropdown-divider"></div>
                   </li>
                 </ul><!-- ./navbar-nav -->
 
