@@ -112,7 +112,8 @@ module.exports = (dato, root, i18n) => {
         addBlock(frontmatter, pageData, 'addedValue');
         addBlock(frontmatter, pageData, 'contactBlock');
 
-        addFooterData(frontmatter, dato)
+        addFooterData(frontmatter, dato);
+        addSlugs(frontmatter);
 
         root.createPost('content/' + locale + '/' + filename, 'yaml', {
           frontmatter: frontmatter
@@ -146,7 +147,7 @@ module.exports = (dato, root, i18n) => {
       frontmatter.banner = {
         title: headerData.title,
         short: headerData.short,
-        link: headerData.link,
+        link: headerData.linkPage ? headerData.linkPage.slug : headerData.link,
         dark: headerData.dark,
         image: createImage(headerData.image, 544, 634, imageType),
         socialProfiles: dato.socialProfiles.map(profile => {
@@ -293,5 +294,12 @@ module.exports = (dato, root, i18n) => {
         })
       }
     }
+  }
+
+  function addSlugs(frontmatter) {
+    frontmatter.slugs = {};
+    pages.forEach((page) => {
+      frontmatter.slugs[page] = dato[page].slug;
+    })
   }
 }

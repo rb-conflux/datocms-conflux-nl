@@ -1,4 +1,4 @@
-{{ $onzeImpact := "/onze-impact" }}
+{{ $onzeImpact := .slugs.pageTheme }}
 <section class="themes-area">
     <div class="container container-large">
         <div class="row">
@@ -9,10 +9,10 @@
                             <img src="/assets/img/home/themas-bg.svg" alt="themas-bg">
                         </div><!-- /.style -->
                         <div class="themes-title title">
-                            <h2>Onze thema’s</h2>
+                            <h2>{{.themes.title}}</h2>
                         </div><!-- /.themes-title -->
                         <div class="themes-inner">
-                            {{range .items}}
+                            {{range .themes.items}}
                             <div class="themes-single">
                                 <div class="themes-single-icon">
                                     {{if .icon}}

@@ -8,12 +8,13 @@
 {{ partial "shared/triple-block.html" .Params.domains }}
 {{end}}
 
+
 {{if .Params.companies}}
-{{ partial "shared/companies.html" .Params.companies }}
+{{ partial "shared/companies.html" .Params}}
 {{end}}
 
 {{if .Params.themes}}
-{{ partial "shared/themes.html" .Params.themes }}
+{{ partial "shared/themes.html" .Params }}
 {{end}}
 
 {{if .Params.contact}}
