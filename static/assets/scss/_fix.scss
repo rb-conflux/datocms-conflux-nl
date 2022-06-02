@@ -1,7 +1,6 @@
 .fix_banner_link,
 .fix_banner_link:hover {
     font-weight: 600;
-    font-size: 14px;
     line-height: 1.5;
     color: #172744;
     text-decoration: none;
@@ -28,7 +27,7 @@
 }
 
 .banner-text {
-    h2 {
+    h1 {
         font-size: 2.35em;
     }
 
@@ -133,7 +132,7 @@ hr {
 
 @media (max-width: 991px) {
 
-    .banner-text h2 {
+    .banner-text h1 {
         font-size: 1.75em;
     }
 
@@ -498,4 +497,16 @@ nav {
     line-height: 1.64;
     letter-spacing: 0.4px;
     color: #000;
+}
+
+.home-banner .banner-text h1, .home-banner .banner-text .h1 {
+    color: #fff;
+} 
+
+.banner-text h1, .banner-text .h1 {
+    font-size: 2.35em;
+    max-width: 550px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #172744;
 }
