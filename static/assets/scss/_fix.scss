@@ -260,6 +260,18 @@ hr {
 
 }
 
+.mobile-language-select {
+
+    .nav-link {
+        display: inline;
+        margin-left: 0px !important;
+    }
+
+    a:first-child::after {
+        content: ' | ';
+    }
+}
+
 
 @media (max-width: 1199px) {}
 
